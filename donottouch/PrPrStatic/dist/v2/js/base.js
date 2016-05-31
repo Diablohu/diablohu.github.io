@@ -105,7 +105,7 @@ function imgOk(img, callback) {
         $img = $(img);
     }
 
-    $img.on('load', callback);
+    $img.on('load error', callback);
 
     if (!img.complete) {
         return !1;
