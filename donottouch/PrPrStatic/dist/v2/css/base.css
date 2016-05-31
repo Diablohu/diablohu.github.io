@@ -5480,10 +5480,6 @@ body.mod-iframe #footer, body.trumbowyg-body-fullscreen #footer {
 @media all and (max-width:480px) {
     .row-3div, .row-4div, .row-6div, .row-16div {
         margin-right: auto !important;
-    }
-
-    .row-3div:first-of-type, .row-4div:first-of-type, .row-6div:first-of-type,
-    .row-16div:first-of-type {
         margin-top: auto !important;
     }
 
