@@ -1,7 +1,0 @@
-{
-"oldName":"",
-"chnName":"",
-"otherName":"",
-"dtype":""
-
-}

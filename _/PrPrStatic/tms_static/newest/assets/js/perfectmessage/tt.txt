@@ -1,4 +1,0 @@
-{
- "orginName":,
-"otherName":,
-}
