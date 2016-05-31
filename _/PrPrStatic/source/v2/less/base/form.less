@@ -1,0 +1,210 @@
+    
+input[type="text"],
+input[type="search"],
+input[type="number"], select, textarea{
+    width:      100%;
+    border:     0;
+    background: none transparent;
+    &[readonly]{
+        //background: rgba(0, 0, 0, .05);
+        color:      @base-color;
+    }
+}
+
+input[type="text"],
+input[type="search"],
+input[type="number"], select{
+    height:     1.7em;
+}
+
+input, select, textarea{
+    line-height:1.7em;
+    &:focus{
+        outline:    0;
+    }
+}
+
+textarea{
+    padding:    0;
+}
+
+
+
+
+
+.form-item{
+    clear:          both;
+    
+    dt{
+        color:      @base-color;
+    }
+    
+    dd{
+        margin:     0;
+    }
+}
+
+.form-error{
+    border:     1px solid @theme-red-200;
+    background: @theme-red-50;
+    color:      @theme-red-500;
+    padding:    .35em .65em;
+    border-radius: 5px;
+}
+
+form{
+    display:    table;
+    width:      100%;
+    margin:     0 auto;
+    max-width:  @screen-mobile;
+
+    .form-item{
+        display:    table-row;
+        margin:     0;
+        
+        dt, dd{
+            border-bottom:  1px solid @base-border-color;
+            padding-top:    .65em;
+            padding-bottom: .65em;
+            position:       relative;
+            &:first-child{
+                padding-left: .65em;
+            }
+        }
+            dt:last-child{
+                padding-right:.65em;
+            }
+        
+        dt{
+            display:    table-cell;
+            text-align: right;
+            white-space:nowrap;
+            vertical-align: top;
+            cursor:     default;
+        }
+        
+        dd{
+            display:    table-cell;
+            width:      100%;
+            padding-left:   1em;
+            //padding-right:  0;
+            &:first-child{
+                padding-left:   0;
+            }
+        }
+    }
+    
+    .form-items{
+        display:    table;
+        width:      100%;
+        .form-item{
+            display:    table-row;
+        }
+    }
+    
+    .form-actions{
+        padding-left:   .65em;
+        padding-right:  .65em;
+    }
+
+    .taglist{
+        display:    flex;
+        flex-wrap:  wrap;
+        margin-bottom: -8px;
+        .tag{
+            flex:   none;
+            margin-right:   .5em;
+            padding-top:    0;
+            padding-bottom: 0;
+            line-height:    2.1em;
+            margin-bottom:  8px;
+            s{
+                display:    none;
+            }
+            &.is-editable{
+                padding-right:  36px;
+                position:       relative;
+                s{
+                    text-decoration:none;
+                    display:        block;
+                    position:       absolute;
+                    top:            0;
+                    right:          0;
+                    height:         100%;
+                    width:          27px;
+                    background:     @base-border-color;
+                    cursor:         pointer;
+                    border-left:    1px solid @base-border-color;
+                    text-align:     center;
+                    font-size:      1.5em;
+                    &:hover{
+                        background:     #fff;
+                    }
+                    &:active{
+                        background:     hsl(0, 0%, 95%);
+                    }
+                }
+            }
+        }
+        input{
+            flex:   1 0 auto;
+            width:  10em;
+            max-width: 100%;
+            margin-bottom:  8px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.trumbowyg-loading{
+    text-align: center;
+    height:     7em;
+    .loader-circle{
+        margin-top: 2em;
+    }
+    & + textarea[trumbowyg]{
+        display:    none;
+    }
+}
+body .trumbowyg{
+    margin-top:     -5px;
+    margin-bottom:  0;
+    border:         0;
+}
+.trumbowyg{
+    .trumbowyg-button-pane{
+        border:     1px solid #ddd;
+        //border-bottom: 0;
+        //.theme( background-color, 50 );
+        background-color: hsl(0, 0%, 95%);
+        &:after{
+            background:     #ddd;
+        }
+    }
+    .trumbowyg-button-pane button{
+        width:      25px;
+        padding-left:   0 !important;
+        padding-right:  0 !important;
+	    @media all and (max-width: @screen-t2){
+            width:  23px;
+        }
+	    @media all and (max-width: @screen-mobile){
+            width:  35px;
+        }
+    }
+    .trumbowyg-button-pane .trumbowyg-button-group:not(:empty)+.trumbowyg-button-group::before{
+        background:     #ddd;
+    }
+    .trumbowyg-editor[contenteditable]{
+        cursor:         auto;
+        padding-left:   .5em;
+        padding-top:    .75em;
+    }
+}

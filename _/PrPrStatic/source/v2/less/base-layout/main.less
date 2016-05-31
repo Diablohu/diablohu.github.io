@@ -1,0 +1,25 @@
+#main{
+    position:   relative;
+    color:      @base-color-main;
+    //overflow:   hidden;
+    
+    z-index:    @zIndex-main;
+
+	overflow-x: 	hidden;
+    
+    .layout-wrapper{
+        padding:    2em 0;
+    }
+    
+    &:after{
+        content:    "";
+        display:    block;
+        clear:      both;
+    }
+}
+
+.main-banner{
+    background: hsl(0, 0, 92%);
+    border-bottom: 1px solid hsl(0, 0, 86%);
+    margin-bottom: 1em;
+}

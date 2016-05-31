@@ -1,0 +1,26 @@
+a, .link{
+	text-decoration:none;
+	.theme( color, 500 );
+	&:hover{
+		text-decoration:underline;
+		.theme( color, 900 );
+	}
+	&:active{
+		.theme( color, 200 );
+	}
+}
+
+label[for]{
+	cursor: 	pointer;
+}
+
+.link-cancel{
+	background: 	none;
+	border: 		0;
+	padding-left: 	1em;
+	padding-right: 	1em;
+	display: 		inline-block;
+}
+	.button + .link-cancel{
+		margin-left: 	.75em;
+	}

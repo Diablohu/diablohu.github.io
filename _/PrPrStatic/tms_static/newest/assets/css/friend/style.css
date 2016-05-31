@@ -1,0 +1,40 @@
+.plr {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.friends-img {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+.friends-img img {
+    width: 100%;
+    height: auto;
+
+}
+.fridend-list li{
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
+}
+.friend-relate .class-m {
+    margin-left: 15px;
+    font-size: 12px;
+}
+.f-id {
+    color: #333;
+}
+.attion-operate {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #888;
+    display: none;
+}
+.friend-info {
+    padding-left: 70px;
+}
+.friend-instr {
+    line-height: 30px;
+}

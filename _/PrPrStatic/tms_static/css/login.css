@@ -1,0 +1,148 @@
+/*html,body{
+    min-height: 660px; 
+}*/
+.login-bd {
+    background: url('../images/login-bg.jpg') center center no-repeat;
+    width: 100%;
+    min-height: 600px;
+/*
+    height: 100%;
+*/
+    background-size: cover;
+    margin-top: 0;
+
+}
+.hd {
+    position: static!important;
+    top: 0;
+    left: 0;
+
+}
+.bd {
+    position: static !important;
+    bottom: 0;
+    left: 0;
+    margin-top: 0;
+}
+.bh {
+    height: 100%;
+}
+.login-cont {
+    width: 360px;
+    border: 1px solid #eaeaea;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    background-color: #fff;
+}
+.login-btn {
+    width: 100%;
+}
+.top-login p {
+    float: left;
+    cursor: pointer;
+    color: #666;
+    font-size: 20px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    width: 178px;
+    border: 1px solid #eaeaea;
+    border-top: none;
+
+}
+.top-login p.on {
+    border: 1px solid #fff;
+    color: #00a2d4;
+    border-top: none;
+}
+.form-login, .form-register {
+    margin: 40px;
+}
+.form-register {
+    display: block;
+}
+.login-ipt {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.icon {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+.icon-email {
+    background:  url('../images/email-icon.png') no-repeat;
+    width: 17px;
+    height: 14px;
+}
+.icon-pwd {
+    background:  url('../images/pwd-icon.png') no-repeat;
+    width: 17px;
+    height: 18px;
+}
+.l-input {
+    margin-left: 32px;
+    height: 30px;
+    line-height: 30px;
+    width: 87%;
+    border: none;
+}
+.icon-email {
+    top: 9px;
+}
+
+.login-normal a {
+    float: right;
+}
+.login-checked {
+    visibility: hidden;
+
+}
+.error {
+    color: red;
+}
+
+.fast-login {
+    color: #333;
+    margin-top: 10px;
+}
+.mr20 {
+    margin-right: 20px;
+}
+.weibo, .qq {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 10px;
+    *display: inline;
+    *zoom:1;
+}
+.fast-login p {
+    line-height: 34px;
+}
+.fast-l {
+    width: 32px;
+    height: 32px;
+}
+.weibo {
+    background: url('../images/weibo.png') no-repeat;
+}
+.qq {
+    background: url('../images/qq.png') no-repeat;
+}
+.form-register .login-normal a {
+    float: none;
+}
+.input-num {
+    width: 95px;
+    padding: 0 5px;
+    height: 26px;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+}

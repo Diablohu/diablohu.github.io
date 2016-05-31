@@ -1,0 +1,231 @@
+.page-circle-userlist .col {
+    position: relative;
+}
+
+.page-circle-userlist .avatarleft .user-controls {
+    position: relative;
+    width: 30px;
+}
+
+.page-circle-userlist .avatarleft .user-controls:before {
+    content: "...";
+    position: absolute;
+    z-index: 1;
+    font-size: 1.75em;
+    line-height: 0;
+    padding: .15em 0 .65em;
+    top: .25em;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    background-color: #edf0f2;
+    border-color: #b0bec4;
+    color: #78909b;
+    opacity: .65;
+    width: 100%;
+    text-align: center;
+}
+
+.theme-red .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #ffebee;
+}
+
+.theme-pink .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #fce4eb;
+}
+
+.theme-purple .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #f3e5f5;
+}
+
+.theme-deeppurple .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #ede7f6;
+}
+
+.theme-indigo .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e8eaf6;
+}
+
+.theme-blue .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e3f2fd;
+}
+
+.theme-lightblue .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e1f5fe;
+}
+
+.theme-cyan .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e0f7fa;
+}
+
+.theme-teal .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e0f2f1;
+}
+
+.theme-green .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #e8f5e9;
+}
+
+.theme-lightgreen .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #f1f8e9;
+}
+
+.theme-lime .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #f9fbe7;
+}
+
+.theme-yellow .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #fffde7;
+}
+
+.theme-amber .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #fff8e1;
+}
+
+.theme-orange .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #fff3e0;
+}
+
+.theme-deeporange .page-circle-userlist .avatarleft .user-controls:before {
+    background-color: #fbe9e7;
+}
+
+.theme-red .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #ef9a9a;
+}
+
+.theme-pink .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #f48fb1;
+}
+
+.theme-purple .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #ce93d8;
+}
+
+.theme-deeppurple .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #b39ddb;
+}
+
+.theme-indigo .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #9fa8da;
+}
+
+.theme-blue .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #90caf9;
+}
+
+.theme-lightblue .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #81d4fa;
+}
+
+.theme-cyan .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #80deea;
+}
+
+.theme-teal .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #80cbc4;
+}
+
+.theme-green .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #a5d6a7;
+}
+
+.theme-lightgreen .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #c5e1a5;
+}
+
+.theme-lime .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #e6ee9c;
+}
+
+.theme-yellow .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #fff59d;
+}
+
+.theme-amber .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #ffe082;
+}
+
+.theme-orange .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #ffcc80;
+}
+
+.theme-deeporange .page-circle-userlist .avatarleft .user-controls:before {
+    border-color: #ffab91;
+}
+
+.theme-red .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ef5552;
+}
+
+.theme-pink .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ec407a;
+}
+
+.theme-purple .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ab47bc;
+}
+
+.theme-deeppurple .page-circle-userlist .avatarleft .user-controls:before {
+    color: #7e57c2;
+}
+
+.theme-indigo .page-circle-userlist .avatarleft .user-controls:before {
+    color: #5c6bc0;
+}
+
+.theme-blue .page-circle-userlist .avatarleft .user-controls:before {
+    color: #42a5f5;
+}
+
+.theme-lightblue .page-circle-userlist .avatarleft .user-controls:before {
+    color: #29b6f6;
+}
+
+.theme-cyan .page-circle-userlist .avatarleft .user-controls:before {
+    color: #26c6da;
+}
+
+.theme-teal .page-circle-userlist .avatarleft .user-controls:before {
+    color: #26a69a;
+}
+
+.theme-green .page-circle-userlist .avatarleft .user-controls:before {
+    color: #66bb6a;
+}
+
+.theme-lightgreen .page-circle-userlist .avatarleft .user-controls:before {
+    color: #9ccc65;
+}
+
+.theme-lime .page-circle-userlist .avatarleft .user-controls:before {
+    color: #d4e157;
+}
+
+.theme-yellow .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ffee58;
+}
+
+.theme-amber .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ffca28;
+}
+
+.theme-orange .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ffa726;
+}
+
+.theme-deeporange .page-circle-userlist .avatarleft .user-controls:before {
+    color: #ff7043;
+}
+
+.page-circle-userlist .avatarleft .user-controls:hover:before {
+    opacity: 1;
+}
+
+.page-circle-userlist .avatarleft .user-controls select {
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    top: .4em;
+}

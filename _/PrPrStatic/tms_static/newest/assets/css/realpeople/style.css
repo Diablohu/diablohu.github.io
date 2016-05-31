@@ -1,0 +1,105 @@
+/*动漫人*/
+.v-detail {
+	margin-top: 10px;
+}
+
+.js-filter-box li {
+}
+
+.js-left {
+	width: 224px;
+}
+
+.js-left .filter-a {
+	margin-right: 10px;
+}
+
+.js-left   .js-name {
+	text-align: left;
+	text-indent: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+
+.js-right {
+
+	/* width: 480px; */
+}
+.w350 {
+	width: 350px;
+}
+.w150 {
+	width: 150px;
+}
+.JS-e {
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.js-right {
+	float: right;
+}
+
+.js-right .filter-a {
+	margin-left: 10px;
+}
+
+.js-text-r {
+	float: right;
+}
+.filter-item .d-cmcm-a {
+	margin-top: 5px;
+}
+.js-right .d-cmcm-a {
+	margin-right: 0;
+	margin-left: 8px;
+
+}
+.book-name {
+	padding-left:0;
+}
+.handPhone-coin {
+	padding-left: 22px;
+}
+.js-name {
+	color: #67bdcd;
+	font-size: 16px;
+	text-indent: 25px;
+	height: 24px;
+	text-align: right;
+	overflow: hidden;
+}
+
+.js-right .js-name {
+	margin-bottom: 10px;
+}
+
+.js-right .JS-e {
+	text-align: right;
+	height: 24px;
+	overflow: hidden;
+}
+
+.br-b {
+	border-bottom: 1px solid #eaeaea;
+	padding: 25px 0 30px;
+}
+
+.br-b2 {
+	border-bottom: 1px dashed #eaeaea;
+	padding: 25px 0 30px 40px;
+}
+.JS-e .JS-e-info {
+	width: 300px;
+	display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    *display: inline;
+    *zoom:1;
+}
+.JS-e .d-cmcm-a {
+	position: relative;
+	top: -8px;
+}

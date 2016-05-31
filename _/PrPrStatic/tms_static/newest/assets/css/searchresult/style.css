@@ -1,0 +1,18 @@
+
+/*搜索结果页*/
+.d-search {
+    width: 106px;
+}
+.filter-search-box a {
+    display: block;
+    width: auto;
+    text-align: center;
+    line-height: 30px;
+    color: #666;
+}
+.filter-search-box .search-cur {
+	color: #67bdcd;
+}
+.d-search-box {
+	width: 864px;
+}
