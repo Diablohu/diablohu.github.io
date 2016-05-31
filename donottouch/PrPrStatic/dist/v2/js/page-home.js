@@ -1,13 +1,19 @@
 'use strict';
 
 var pageHomeHot = new Component('.page-home-section[section="hot"]', 'page-home-section-init', function (el) {
+    if (typeof pageHomeHot.index == 'undefined') {
+        pageHomeHot.index = 0;
+    }
+
     var $el = $(el),
         $slides = $el.find('.slide'),
         $controls = $('<div class="controls"/>').appendTo($el),
         radios = [],
-        switches = [];
+        switches = [],
+        cur = 1,
+        count = $slides.length;
 
-    $slides.each(function (i, slide) {
+    function slideInit(i, slide) {
         var $slide = $(slide).attr('data-order', i + 1),
             imgLoading = 0,
             $imgs = $slide.find('img');
@@ -39,11 +45,44 @@ var pageHomeHot = new Component('.page-home-section[section="hot"]', 'page-home-
         } else {
             imgReady();
         }
-    });
+    }
+
+    function radioChange(evt) {
+        cur = parseInt(evt.currentTarget.getAttribute('value'));
+    }
+
+    function goPrev() {
+        go(cur - 1);
+    }
+
+    function goNext() {
+        go(cur + 1);
+    }
+
+    function go(order) {
+        order = parseInt(order);
+        if (order < 1) order = count;
+        if (order > count) order = 1;
+        if (!order) return;
+
+        return radios[order - 1].prop('checked', !0).trigger('change');
+    }
+
+    $slides.each(slideInit);
+    $el.on('change.radioChange', 'input[type="radio"]', radioChange);
+
+    $('<button/>', {
+        'type': 'button',
+        'class': 'prev'
+    }).on('click', goPrev).prependTo($controls);
+
+    $('<button/>', {
+        'type': 'button',
+        'class': 'next'
+    }).on('click', goNext).appendTo($controls);
 
     pageHomeHot.index++;
 });
-pageHomeHot.index = 0;
 
 var pageHomeHot = new Component('.page-home-section[section="recommended"]', 'page-home-section-init', function (el) {
     var $cover = $(el).find('.cover');

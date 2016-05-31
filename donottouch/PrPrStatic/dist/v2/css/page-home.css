@@ -940,18 +940,48 @@
     text-align: center;
 }
 
+.page-home-section[section=hot] .controls button,
 .page-home-section[section=hot] .controls label {
     display: inline-block;
     height: 100%;
     width: 35px;
     position: relative;
+    border: 0;
+    background: none;
+}
+
+.page-home-section[section=hot] .controls button:before,
+.page-home-section[section=hot] .controls label:before {
+    position: absolute;
+}
+
+.page-home-section[section=hot] .controls button:before {
+    width: 100%;
+    line-height: 0;
+    top: 50%;
+    left: 0;
+    font-size: 28px;
+    text-align: center;
+    margin-top: -.05em;
+    color: #b0bec4;
+}
+
+.page-home-section[section=hot] .controls button:hover:before {
+    color: #607c8a;
+}
+
+.page-home-section[section=hot] .controls button.prev:before {
+    content: "\276e";
+}
+
+.page-home-section[section=hot] .controls button.next:before {
+    content: "\276f";
 }
 
 .page-home-section[section=hot] .controls label:before {
     content: "";
     width: 15px;
     height: 15px;
-    position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -7.5px;
@@ -1005,8 +1035,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="1"]:checked~.slides .slide[data-order="1"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1044,8 +1074,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="2"]:checked~.slides .slide[data-order="2"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1083,8 +1113,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="3"]:checked~.slides .slide[data-order="3"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1122,8 +1152,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="4"]:checked~.slides .slide[data-order="4"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1161,8 +1191,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="5"]:checked~.slides .slide[data-order="5"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1200,8 +1230,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="6"]:checked~.slides .slide[data-order="6"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1239,8 +1269,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="7"]:checked~.slides .slide[data-order="7"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1278,8 +1308,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="8"]:checked~.slides .slide[data-order="8"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1317,8 +1347,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="9"]:checked~.slides .slide[data-order="9"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1356,8 +1386,8 @@
 
 @media all and (max-width:540px) {
     .page-home-section[section=hot]>input[value="10"]:checked~.slides .slide[data-order="10"] dl {
-        -webkit-animation-name: fadeInScale;
-                animation-name: fadeInScale;
+        -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
     }
 }
 
@@ -1946,32 +1976,4 @@
 
 .page-home-section[section=people] {
     background: #fff;
-}
-
-@-webkit-keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-                transform: none;
-    }
-}
-
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-                transform: none;
-    }
 }
