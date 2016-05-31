@@ -1819,11 +1819,11 @@
 
 .page-home-section[section=recommended] .cover:before {
     z-index: 3;
-    background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .35) 0, rgba(0, 0, 0, .35) 0),
-                -webkit-linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .35) 0, rgba(0, 0, 0, .35) 0),
+    background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .5) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 0),
+                -webkit-linear-gradient(45deg, rgba(0, 0, 0, .5) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 0),
                 transparent;
-    background: linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .35) 0, rgba(0, 0, 0, .35) 0),
-                linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .35) 0, rgba(0, 0, 0, .35) 0),
+    background: linear-gradient(45deg, rgba(0, 0, 0, .5) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 0),
+                linear-gradient(45deg, rgba(0, 0, 0, .5) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 0),
                 transparent;
     -webkit-background-size: 2px 2px;
             background-size: 2px 2px;
@@ -1832,8 +1832,8 @@
 
 .page-home-section[section=recommended] .cover:after {
     z-index: 2;
-    opacity: .5;
-    background: #f50057;
+    opacity: .75;
+    background: #ad1457;
 }
 
 .page-home-section[section=recommended] .layout-wrapper {
@@ -1868,8 +1868,61 @@
 }
 
 @media all and (max-width:720px) {
+    .page-home-section[section=recommended] .texts {
+        width: auto;
+    }
+
     .page-home-section[section=recommended] .texts img[align] {
         width: 35%;
+    }
+}
+
+.page-home-section[section=recommended] .texts>dl {
+    clear: both;
+    overflow: hidden;
+}
+
+.page-home-section[section=recommended] .texts>dl,
+.page-home-section[section=recommended] .texts>dl dd,
+.page-home-section[section=recommended] .texts>dl dt {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.page-home-section[section=recommended] .texts>dl dt {
+    width: 25%;
+    float: left;
+}
+
+.page-home-section[section=recommended] .texts>dl dd {
+    float: left;
+    width: 75%;
+    text-align: left;
+    padding-right: 1.5em;
+}
+
+.page-home-section[section=recommended] .texts>dl dt~dd {
+    float: right;
+    padding-left: 1.5em;
+    padding-right: 0;
+}
+
+.page-home-section[section=recommended] .texts>dl dd~dt {
+    float: right;
+}
+
+.page-home-section[section=recommended] .texts>dl+dl {
+    margin-top: 3em;
+}
+
+@media all and (max-width:720px) {
+    .page-home-section[section=recommended] .texts>dl dt {
+        width: 30%;
+    }
+
+    .page-home-section[section=recommended] .texts>dl dd {
+        width: 70%;
     }
 }
 
