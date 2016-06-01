@@ -13,12 +13,17 @@
     padding-top: 4em;
     padding-bottom: 4em;
     cursor: default;
+    background: #edf0f2;
 }
 
 .page-home-section:after {
     content: "";
     display: block;
     clear: both;
+}
+
+.page-home-section:last-child {
+    background: #fafafa;
 }
 
 .page-home-section h2 {
@@ -994,12 +999,12 @@
     -webkit-background-size: 100% 200%;
             background-size: 100% 200%;
     border: 1px solid #b0bec4;
+    -webkit-animation: 5s linear;
+            animation: 5s linear;
     -webkit-transition: -webkit-transform .2s ease-out;
             transition: -webkit-transform .2s ease-out;
             transition: transform .2s ease-out;
             transition: transform .2s ease-out, -webkit-transform .2s ease-out;
-    -webkit-animation: 5s linear;
-            animation: 5s linear;
 }
 
 .page-home-section[section=hot] .controls label:hover:before {
@@ -1465,6 +1470,7 @@
 
 .page-home-section[section=rankings] {
     padding-bottom: 0;
+    background: #fafafa;
 }
 
 .page-home-section[section=rankings] h4 {
@@ -1892,6 +1898,12 @@
     background: #ad1457;
 }
 
+@media all and (max-width:720px) {
+    .page-home-section[section=recommended] .cover {
+        background-attachment: scroll;
+    }
+}
+
 .page-home-section[section=recommended] .layout-wrapper {
     position: relative;
     z-index: 2;
@@ -1920,17 +1932,18 @@
     min-width: 320px;
     width: 85%;
     margin: 2em auto 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 }
 
-@media all and (max-width:720px) {
-    .page-home-section[section=recommended] .texts {
-        width: auto;
-    }
+.page-home-section[section=recommended] .texts a .thumbnail {
+    border-color: #e91e63;
+}
 
-    .page-home-section[section=recommended] .texts img[align] {
-        width: 35%;
-    }
+.page-home-section[section=recommended] .texts a:hover .thumbnail {
+    border-color: #880e4f;
+}
+
+.page-home-section[section=recommended] .texts a:active .thumbnail {
+    border-color: #f48fb1;
 }
 
 .page-home-section[section=recommended] .texts>dl {
@@ -1982,6 +1995,16 @@
     }
 }
 
+@media all and (max-width:720px) {
+    .page-home-section[section=recommended] .texts {
+        width: auto;
+    }
+
+    .page-home-section[section=recommended] .texts img[align] {
+        width: 35%;
+    }
+}
+
 .page-home-section[section=recommended] h2 {
     color: #fff;
     -webkit-box-flex: 0;
@@ -2025,15 +2048,35 @@
 
 .page-home-section[section=recommended]+.page-home-section {
     border-top-color: #fff;
-}
-
-.page-home-section[section=specials] {
     background: #fff;
 }
 
 .page-home-section[section=specials] .thumbnail-img {
     height: 0;
     padding-bottom: 62.5%;
+}
+
+.page-home-section[section=specials] .thumbnail-overlay {
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+.page-home-section[section=specials] .thumbnail-overlay.vmiddle {
+    background: none;
+}
+
+.page-home-section[section=specials] .thumbnail-overlay.vmiddle .vmiddle-body {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background: #404040;
+    background: rgba(0, 0, 0, .5);
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    padding: .25em .5em;
 }
 
 .page-home-section[section=pics] {
@@ -2083,7 +2126,7 @@
     text-shadow: none;
 }
 
-.page-home-section[section=people] {
+.page-home-section[section=pics]+.page-home-section {
     background: #fff;
 }
 

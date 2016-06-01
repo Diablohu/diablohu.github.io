@@ -85,14 +85,14 @@ var pageHomeHot = new Component('.page-home-section[section="hot"]', 'page-home-
     function timeoutStart(time) {
         time = time || 5000;
         timeoutClear();
-        console.log('timeoutStart');
+
         $el.attr('pending', getOrderNext());
         return timeoutNext = setTimeout(goNext, 5000);
     }
 
     function timeoutClear() {
         if (!timeoutNext) return !0;
-        console.log('timeoutClear');
+
         clearTimeout(timeoutNext);
         timeoutNext = null;
         $el.removeAttr('pending');
