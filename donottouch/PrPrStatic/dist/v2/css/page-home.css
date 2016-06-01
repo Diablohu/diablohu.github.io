@@ -411,7 +411,7 @@
     }
 
     .page-home-section[section=hot] .slide[type=article][count="3"] dl dt strong {
-        font-size: 30px;
+        font-size: 26px;
     }
 }
 
@@ -468,7 +468,7 @@
     }
 
     .page-home-section[section=hot] .slide[type=article][count="4"] dl dt strong {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .page-home-section[section=hot] .slide[type=article][count="4"] dl dt span {
@@ -684,7 +684,7 @@
     }
 
     .page-home-section[section=hot] .slide[type=article][count="5"] dl dt strong {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .page-home-section[section=hot] .slide[type=article][count="5"] dl dt span {
@@ -2114,7 +2114,22 @@
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-    padding: .25em .5em;
+    padding: .25em 1em;
+}
+
+@media all and (max-width:720px) {
+    .page-home-section[section=specials] .thumbnail-img {
+        padding-bottom: 56.25%;
+    }
+
+    .page-home-section[section=specials] .thumbnail-overlay {
+        font-size: 1.3em;
+        line-height: 1.5em;
+    }
+
+    .page-home-section[section=specials] .thumbnail-overlay.vmiddle .vmiddle-body {
+        padding: .5em 1.25em;
+    }
 }
 
 .page-home-section[section=specials] a:hover .thumbnail-overlay.vmiddle .vmiddle-body {
