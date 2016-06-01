@@ -2079,6 +2079,10 @@
     padding: .25em .5em;
 }
 
+.page-home-section[section=specials] a:hover .thumbnail-overlay.vmiddle .vmiddle-body {
+    background: rgba(0, 0, 0, .35);
+}
+
 .page-home-section[section=pics] {
     background: #00c853;
     color: #fff;
