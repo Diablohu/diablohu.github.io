@@ -2189,7 +2189,7 @@
 }
 
 @media all and (max-width:720px) {
-    .page-home-section[section=pics] .picrow:nth-child(n+5) {
+    .page-home-section[section=pics] .picrow:nth-child(n+4) {
         display: none;
     }
 }
