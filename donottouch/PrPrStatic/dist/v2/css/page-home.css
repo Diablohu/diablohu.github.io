@@ -1473,15 +1473,45 @@
     background: #fafafa;
 }
 
+.page-home-section[section=rankings] h2 {
+    padding-bottom: .5em;
+}
+
 .page-home-section[section=rankings] h4 {
     color: gray;
     font-size: 16px;
     text-align: center;
     font-weight: 100;
+    padding-bottom: 4em;
+    margin-bottom: -3em;
 }
 
 .page-home-section[section=rankings] h2+h4 {
-    margin-top: -1.2em;
+    margin-top: -2.5em;
+}
+
+.page-home-section[section=rankings] h2, .page-home-section[section=rankings] h4 {
+    background: #fafafa;
+    position: relative;
+    z-index: 2;
+}
+
+.page-home-section[section=rankings] .layout-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    margin-left: -3px;
+    background: #edf0f2;
+    height: 100%;
+    z-index: 1;
+}
+
+.page-home-section[section=rankings] .layout-wrapper:after {
+    content: "";
+    clear: both;
+    display: block;
 }
 
 .page-home-section[section=rankings] dd, .page-home-section[section=rankings] dl,
@@ -1494,9 +1524,10 @@
     width: 50%;
     float: left;
     vertical-align: top;
-    border-right: 3px solid #edf0f2;
     margin-top: 3em;
     counter-reset: a;
+    position: relative;
+    z-index: 2;
 }
 
 .page-home-section[section=rankings] dt {
@@ -1533,7 +1564,6 @@
 
 .page-home-section[section=rankings] dl+dl {
     border-right: 0;
-    border-left: 3px solid #edf0f2;
 }
 
 .page-home-section[section=rankings] dl+dl dt {
@@ -1776,6 +1806,10 @@
 }
 
 @media all and (max-width:720px) {
+    .page-home-section[section=rankings] .layout-wrapper:before {
+        display: none;
+    }
+
     .page-home-section[section=rankings] dl {
         float: none;
         display: block;
@@ -1799,8 +1833,8 @@
 
     .page-home-section[section=rankings] dl+dl {
         border-left: 0;
-        border-top: 2px solid #edf0f2;
-        padding-top: 1em;
+        border-top: 4px solid #edf0f2;
+        padding-top: 3em;
     }
 
     .page-home-section[section=rankings] dl+dl dt {
@@ -2048,6 +2082,10 @@
 
 .page-home-section[section=recommended]+.page-home-section {
     border-top-color: #fff;
+    background: #fff;
+}
+
+.page-home-section[section=specials] {
     background: #fff;
 }
 
