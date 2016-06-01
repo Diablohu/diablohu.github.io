@@ -988,12 +988,18 @@
     margin-left: -7.5px;
     -webkit-border-radius: 50%;
             border-radius: 50%;
-    background: #d0d9dd;
+    background: #edf0f2 -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(0, #d0d9dd)) repeat-x 0 0;
+    background: #edf0f2 -webkit-linear-gradient(top, transparent 50%, #d0d9dd 0) repeat-x 0 0;
+    background: #edf0f2 linear-gradient(180deg, transparent 50%, #d0d9dd 0) repeat-x 0 0;
+    -webkit-background-size: 100% 200%;
+            background-size: 100% 200%;
     border: 1px solid #b0bec4;
     -webkit-transition: -webkit-transform .2s ease-out;
             transition: -webkit-transform .2s ease-out;
             transition: transform .2s ease-out;
             transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-animation: 5s linear;
+            animation: 5s linear;
 }
 
 .page-home-section[section=hot] .controls label:hover:before {
@@ -1013,13 +1019,13 @@
               transition-delay: .5s, 0s;
 }
 
-.page-home-section[section=hot]>input[value="1"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot]>[value="1"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
 }
 
-.page-home-section[section=hot]>input[value="1"]:checked~.slides .slide[data-order="1"] {
+.page-home-section[section=hot]>[value="1"]:checked~.slides .slide[data-order="1"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1027,24 +1033,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="1"]:checked~.slides .slide[data-order="1"] dl {
+.page-home-section[section=hot]>[value="1"]:checked~.slides .slide[data-order="1"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="1"]:checked~.slides .slide[data-order="1"] dl {
+    .page-home-section[section=hot]>[value="1"]:checked~.slides .slide[data-order="1"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="1"]:checked~.controls [data-order="1"] {
+.page-home-section[section=hot]>[value="1"]:checked~.controls [data-order="1"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="1"]:checked~.controls [data-order="1"]:before {
+.page-home-section[section=hot]>[value="1"]:checked~.controls [data-order="1"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1052,13 +1058,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="2"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="1"] .controls label[data-order="1"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="2"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-30px);
         -ms-transform: translateX(-30px);
             transform: translateX(-30px);
 }
 
-.page-home-section[section=hot]>input[value="2"]:checked~.slides .slide[data-order="2"] {
+.page-home-section[section=hot]>[value="2"]:checked~.slides .slide[data-order="2"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1066,24 +1077,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="2"]:checked~.slides .slide[data-order="2"] dl {
+.page-home-section[section=hot]>[value="2"]:checked~.slides .slide[data-order="2"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="2"]:checked~.slides .slide[data-order="2"] dl {
+    .page-home-section[section=hot]>[value="2"]:checked~.slides .slide[data-order="2"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="2"]:checked~.controls [data-order="2"] {
+.page-home-section[section=hot]>[value="2"]:checked~.controls [data-order="2"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="2"]:checked~.controls [data-order="2"]:before {
+.page-home-section[section=hot]>[value="2"]:checked~.controls [data-order="2"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1091,13 +1102,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="3"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="2"] .controls label[data-order="2"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="3"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-60px);
         -ms-transform: translateX(-60px);
             transform: translateX(-60px);
 }
 
-.page-home-section[section=hot]>input[value="3"]:checked~.slides .slide[data-order="3"] {
+.page-home-section[section=hot]>[value="3"]:checked~.slides .slide[data-order="3"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1105,24 +1121,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="3"]:checked~.slides .slide[data-order="3"] dl {
+.page-home-section[section=hot]>[value="3"]:checked~.slides .slide[data-order="3"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="3"]:checked~.slides .slide[data-order="3"] dl {
+    .page-home-section[section=hot]>[value="3"]:checked~.slides .slide[data-order="3"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="3"]:checked~.controls [data-order="3"] {
+.page-home-section[section=hot]>[value="3"]:checked~.controls [data-order="3"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="3"]:checked~.controls [data-order="3"]:before {
+.page-home-section[section=hot]>[value="3"]:checked~.controls [data-order="3"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1130,13 +1146,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="4"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="3"] .controls label[data-order="3"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="4"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-90px);
         -ms-transform: translateX(-90px);
             transform: translateX(-90px);
 }
 
-.page-home-section[section=hot]>input[value="4"]:checked~.slides .slide[data-order="4"] {
+.page-home-section[section=hot]>[value="4"]:checked~.slides .slide[data-order="4"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1144,24 +1165,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="4"]:checked~.slides .slide[data-order="4"] dl {
+.page-home-section[section=hot]>[value="4"]:checked~.slides .slide[data-order="4"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="4"]:checked~.slides .slide[data-order="4"] dl {
+    .page-home-section[section=hot]>[value="4"]:checked~.slides .slide[data-order="4"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="4"]:checked~.controls [data-order="4"] {
+.page-home-section[section=hot]>[value="4"]:checked~.controls [data-order="4"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="4"]:checked~.controls [data-order="4"]:before {
+.page-home-section[section=hot]>[value="4"]:checked~.controls [data-order="4"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1169,13 +1190,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="5"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="4"] .controls label[data-order="4"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="5"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-120px);
         -ms-transform: translateX(-120px);
             transform: translateX(-120px);
 }
 
-.page-home-section[section=hot]>input[value="5"]:checked~.slides .slide[data-order="5"] {
+.page-home-section[section=hot]>[value="5"]:checked~.slides .slide[data-order="5"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1183,24 +1209,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="5"]:checked~.slides .slide[data-order="5"] dl {
+.page-home-section[section=hot]>[value="5"]:checked~.slides .slide[data-order="5"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="5"]:checked~.slides .slide[data-order="5"] dl {
+    .page-home-section[section=hot]>[value="5"]:checked~.slides .slide[data-order="5"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="5"]:checked~.controls [data-order="5"] {
+.page-home-section[section=hot]>[value="5"]:checked~.controls [data-order="5"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="5"]:checked~.controls [data-order="5"]:before {
+.page-home-section[section=hot]>[value="5"]:checked~.controls [data-order="5"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1208,13 +1234,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="6"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="5"] .controls label[data-order="5"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="6"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-150px);
         -ms-transform: translateX(-150px);
             transform: translateX(-150px);
 }
 
-.page-home-section[section=hot]>input[value="6"]:checked~.slides .slide[data-order="6"] {
+.page-home-section[section=hot]>[value="6"]:checked~.slides .slide[data-order="6"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1222,24 +1253,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="6"]:checked~.slides .slide[data-order="6"] dl {
+.page-home-section[section=hot]>[value="6"]:checked~.slides .slide[data-order="6"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="6"]:checked~.slides .slide[data-order="6"] dl {
+    .page-home-section[section=hot]>[value="6"]:checked~.slides .slide[data-order="6"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="6"]:checked~.controls [data-order="6"] {
+.page-home-section[section=hot]>[value="6"]:checked~.controls [data-order="6"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="6"]:checked~.controls [data-order="6"]:before {
+.page-home-section[section=hot]>[value="6"]:checked~.controls [data-order="6"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1247,13 +1278,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="7"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="6"] .controls label[data-order="6"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="7"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-180px);
         -ms-transform: translateX(-180px);
             transform: translateX(-180px);
 }
 
-.page-home-section[section=hot]>input[value="7"]:checked~.slides .slide[data-order="7"] {
+.page-home-section[section=hot]>[value="7"]:checked~.slides .slide[data-order="7"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1261,24 +1297,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="7"]:checked~.slides .slide[data-order="7"] dl {
+.page-home-section[section=hot]>[value="7"]:checked~.slides .slide[data-order="7"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="7"]:checked~.slides .slide[data-order="7"] dl {
+    .page-home-section[section=hot]>[value="7"]:checked~.slides .slide[data-order="7"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="7"]:checked~.controls [data-order="7"] {
+.page-home-section[section=hot]>[value="7"]:checked~.controls [data-order="7"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="7"]:checked~.controls [data-order="7"]:before {
+.page-home-section[section=hot]>[value="7"]:checked~.controls [data-order="7"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1286,13 +1322,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="8"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="7"] .controls label[data-order="7"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="8"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-210px);
         -ms-transform: translateX(-210px);
             transform: translateX(-210px);
 }
 
-.page-home-section[section=hot]>input[value="8"]:checked~.slides .slide[data-order="8"] {
+.page-home-section[section=hot]>[value="8"]:checked~.slides .slide[data-order="8"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1300,24 +1341,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="8"]:checked~.slides .slide[data-order="8"] dl {
+.page-home-section[section=hot]>[value="8"]:checked~.slides .slide[data-order="8"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="8"]:checked~.slides .slide[data-order="8"] dl {
+    .page-home-section[section=hot]>[value="8"]:checked~.slides .slide[data-order="8"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="8"]:checked~.controls [data-order="8"] {
+.page-home-section[section=hot]>[value="8"]:checked~.controls [data-order="8"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="8"]:checked~.controls [data-order="8"]:before {
+.page-home-section[section=hot]>[value="8"]:checked~.controls [data-order="8"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1325,13 +1366,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="9"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="8"] .controls label[data-order="8"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="9"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-240px);
         -ms-transform: translateX(-240px);
             transform: translateX(-240px);
 }
 
-.page-home-section[section=hot]>input[value="9"]:checked~.slides .slide[data-order="9"] {
+.page-home-section[section=hot]>[value="9"]:checked~.slides .slide[data-order="9"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1339,24 +1385,24 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="9"]:checked~.slides .slide[data-order="9"] dl {
+.page-home-section[section=hot]>[value="9"]:checked~.slides .slide[data-order="9"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="9"]:checked~.slides .slide[data-order="9"] dl {
+    .page-home-section[section=hot]>[value="9"]:checked~.slides .slide[data-order="9"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="9"]:checked~.controls [data-order="9"] {
+.page-home-section[section=hot]>[value="9"]:checked~.controls [data-order="9"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="9"]:checked~.controls [data-order="9"]:before {
+.page-home-section[section=hot]>[value="9"]:checked~.controls [data-order="9"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
@@ -1364,13 +1410,18 @@
             transform: scale(1.3333);
 }
 
-.page-home-section[section=hot]>input[value="10"]:checked~.slides .slides-wrapper {
+.page-home-section[section=hot][pending="9"] .controls label[data-order="9"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
+}
+
+.page-home-section[section=hot]>[value="10"]:checked~.slides .slides-wrapper {
     -webkit-transform: translateX(-270px);
         -ms-transform: translateX(-270px);
             transform: translateX(-270px);
 }
 
-.page-home-section[section=hot]>input[value="10"]:checked~.slides .slide[data-order="10"] {
+.page-home-section[section=hot]>[value="10"]:checked~.slides .slide[data-order="10"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity .4s ease-out;
@@ -1378,29 +1429,34 @@
     z-index: 2;
 }
 
-.page-home-section[section=hot]>input[value="10"]:checked~.slides .slide[data-order="10"] dl {
+.page-home-section[section=hot]>[value="10"]:checked~.slides .slide[data-order="10"] dl {
     opacity: 0;
     -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
 }
 
 @media all and (max-width:540px) {
-    .page-home-section[section=hot]>input[value="10"]:checked~.slides .slide[data-order="10"] dl {
+    .page-home-section[section=hot]>[value="10"]:checked~.slides .slide[data-order="10"] dl {
         -webkit-animation-name: fadeIn;
                 animation-name: fadeIn;
     }
 }
 
-.page-home-section[section=hot]>input[value="10"]:checked~.controls [data-order="10"] {
+.page-home-section[section=hot]>[value="10"]:checked~.controls [data-order="10"] {
     cursor: default;
 }
 
-.page-home-section[section=hot]>input[value="10"]:checked~.controls [data-order="10"]:before {
+.page-home-section[section=hot]>[value="10"]:checked~.controls [data-order="10"]:before {
     background: #607c8a;
     border: 0;
     -webkit-transform: scale(1.3333);
         -ms-transform: scale(1.3333);
             transform: scale(1.3333);
+}
+
+.page-home-section[section=hot][pending="10"] .controls label[data-order="10"]:before {
+    -webkit-animation-name: hot-label-pending;
+            animation-name: hot-label-pending;
 }
 
 .page-home-section[section=hot]+.page-home-section {
@@ -2029,4 +2085,24 @@
 
 .page-home-section[section=people] {
     background: #fff;
+}
+
+@-webkit-keyframes hot-label-pending {
+    0% {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes hot-label-pending {
+    0% {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
 }

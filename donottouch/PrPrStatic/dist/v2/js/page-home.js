@@ -11,7 +11,8 @@ var pageHomeHot = new Component('.page-home-section[section="hot"]', 'page-home-
         radios = [],
         switches = [],
         cur = 1,
-        count = $slides.length;
+        count = $slides.length,
+        timeoutNext = timeoutStart();
 
     function slideInit(i, slide) {
         var $slide = $(slide).attr('data-order', i + 1),
@@ -59,17 +60,51 @@ var pageHomeHot = new Component('.page-home-section[section="hot"]', 'page-home-
         go(cur + 1);
     }
 
-    function go(order) {
+    function getOrder(order) {
         order = parseInt(order);
         if (order < 1) order = count;
         if (order > count) order = 1;
-        if (!order) return;
+        if (!order) return !1;
+        return order;
+    }
 
-        return radios[order - 1].prop('checked', !0).trigger('change');
+    function getOrderNext() {
+        return getOrder(cur + 1);
+    }
+
+    function go(order) {
+        if (typeof order == 'undefined') return;
+
+        order = getOrder(order);
+
+        radios[order - 1].prop('checked', !0).trigger('change');
+
+        timeoutStart();
+    }
+
+    function timeoutStart(time) {
+        time = time || 5000;
+        timeoutClear();
+        console.log('timeoutStart');
+        $el.attr('pending', getOrderNext());
+        return timeoutNext = setTimeout(goNext, 5000);
+    }
+
+    function timeoutClear() {
+        if (!timeoutNext) return !0;
+        console.log('timeoutClear');
+        clearTimeout(timeoutNext);
+        timeoutNext = null;
+        $el.removeAttr('pending');
+        return !0;
     }
 
     $slides.each(slideInit);
-    $el.on('change.radioChange', 'input[type="radio"]', radioChange);
+    $el.on('change.radioChange', 'input[type="radio"]', radioChange).on('mousemove.radioChange', function () {
+        timeoutClear();
+    }).hover(function () {
+        return timeoutNext = timeoutStart();
+    });
 
     $('<button/>', {
         'type': 'button',
