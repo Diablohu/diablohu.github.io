@@ -1496,7 +1496,12 @@
     z-index: 2;
 }
 
-.page-home-section[section=rankings] .layout-wrapper:before {
+.page-home-section[section=rankings]>.layout-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.page-home-section[section=rankings]>.layout-wrapper:before {
     content: "";
     position: absolute;
     top: 0;
@@ -1508,7 +1513,7 @@
     z-index: 1;
 }
 
-.page-home-section[section=rankings] .layout-wrapper:after {
+.page-home-section[section=rankings]>.layout-wrapper:after {
     content: "";
     clear: both;
     display: block;
