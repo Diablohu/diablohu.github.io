@@ -2188,6 +2188,12 @@
     text-shadow: none;
 }
 
+@media all and (max-width:720px) {
+    .page-home-section[section=pics] .picrow:nth-child(n+5) {
+        display: none;
+    }
+}
+
 .page-home-section[section=pics]+.page-home-section {
     background: #fff;
 }
