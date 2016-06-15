@@ -897,6 +897,293 @@ img {
     color: #ffab91;
 }
 
+.link.mod-color-deep, .mod-color-deep .link, .mod-color-deep a, a.mod-color-deep {
+    color: #d0d9dd !important;
+}
+
+.theme-red .link.mod-color-deep, .theme-red .mod-color-deep .link,
+.theme-red .mod-color-deep a, .theme-red a.mod-color-deep {
+    color: #ffccd1 !important;
+}
+
+.theme-pink .link.mod-color-deep, .theme-pink .mod-color-deep .link,
+.theme-pink .mod-color-deep a, .theme-pink a.mod-color-deep {
+    color: #f8bbd0 !important;
+}
+
+.theme-purple .link.mod-color-deep, .theme-purple .mod-color-deep .link,
+.theme-purple .mod-color-deep a, .theme-purple a.mod-color-deep {
+    color: #e1bee7 !important;
+}
+
+.theme-deeppurple .link.mod-color-deep, .theme-deeppurple .mod-color-deep .link,
+.theme-deeppurple .mod-color-deep a, .theme-deeppurple a.mod-color-deep {
+    color: #d1c4e9 !important;
+}
+
+.theme-indigo .link.mod-color-deep, .theme-indigo .mod-color-deep .link,
+.theme-indigo .mod-color-deep a, .theme-indigo a.mod-color-deep {
+    color: #c5cae9 !important;
+}
+
+.theme-blue .link.mod-color-deep, .theme-blue .mod-color-deep .link,
+.theme-blue .mod-color-deep a, .theme-blue a.mod-color-deep {
+    color: #bbdefb !important;
+}
+
+.theme-lightblue .link.mod-color-deep, .theme-lightblue .mod-color-deep .link,
+.theme-lightblue .mod-color-deep a, .theme-lightblue a.mod-color-deep {
+    color: #b3e5fc !important;
+}
+
+.theme-cyan .link.mod-color-deep, .theme-cyan .mod-color-deep .link,
+.theme-cyan .mod-color-deep a, .theme-cyan a.mod-color-deep {
+    color: #b2ebf2 !important;
+}
+
+.theme-teal .link.mod-color-deep, .theme-teal .mod-color-deep .link,
+.theme-teal .mod-color-deep a, .theme-teal a.mod-color-deep {
+    color: #b2dfdb !important;
+}
+
+.theme-green .link.mod-color-deep, .theme-green .mod-color-deep .link,
+.theme-green .mod-color-deep a, .theme-green a.mod-color-deep {
+    color: #c8e6c9 !important;
+}
+
+.theme-lightgreen .link.mod-color-deep, .theme-lightgreen .mod-color-deep .link,
+.theme-lightgreen .mod-color-deep a, .theme-lightgreen a.mod-color-deep {
+    color: #dcedc8 !important;
+}
+
+.theme-lime .link.mod-color-deep, .theme-lime .mod-color-deep .link,
+.theme-lime .mod-color-deep a, .theme-lime a.mod-color-deep {
+    color: #f0f4c3 !important;
+}
+
+.theme-yellow .link.mod-color-deep, .theme-yellow .mod-color-deep .link,
+.theme-yellow .mod-color-deep a, .theme-yellow a.mod-color-deep {
+    color: #fff9c4 !important;
+}
+
+.theme-amber .link.mod-color-deep, .theme-amber .mod-color-deep .link,
+.theme-amber .mod-color-deep a, .theme-amber a.mod-color-deep {
+    color: #ffecb3 !important;
+}
+
+.theme-orange .link.mod-color-deep, .theme-orange .mod-color-deep .link,
+.theme-orange .mod-color-deep a, .theme-orange a.mod-color-deep {
+    color: #ffe0b2 !important;
+}
+
+.theme-deeporange .link.mod-color-deep, .theme-deeporange .mod-color-deep .link,
+.theme-deeporange .mod-color-deep a, .theme-deeporange a.mod-color-deep {
+    color: #ffccbc !important;
+}
+
+.link.mod-color-deep:hover, .mod-color-deep .link:hover, .mod-color-deep a:hover,
+a.mod-color-deep:hover {
+    color: #edf0f2 !important;
+}
+
+.theme-red .link.mod-color-deep:hover, .theme-red .mod-color-deep .link:hover,
+.theme-red .mod-color-deep a:hover, .theme-red a.mod-color-deep:hover {
+    color: #ffebee !important;
+}
+
+.theme-pink .link.mod-color-deep:hover, .theme-pink .mod-color-deep .link:hover,
+.theme-pink .mod-color-deep a:hover, .theme-pink a.mod-color-deep:hover {
+    color: #fce4eb !important;
+}
+
+.theme-purple .link.mod-color-deep:hover,
+.theme-purple .mod-color-deep .link:hover, .theme-purple .mod-color-deep a:hover,
+.theme-purple a.mod-color-deep:hover {
+    color: #f3e5f5 !important;
+}
+
+.theme-deeppurple .link.mod-color-deep:hover,
+.theme-deeppurple .mod-color-deep .link:hover,
+.theme-deeppurple .mod-color-deep a:hover,
+.theme-deeppurple a.mod-color-deep:hover {
+    color: #ede7f6 !important;
+}
+
+.theme-indigo .link.mod-color-deep:hover,
+.theme-indigo .mod-color-deep .link:hover, .theme-indigo .mod-color-deep a:hover,
+.theme-indigo a.mod-color-deep:hover {
+    color: #e8eaf6 !important;
+}
+
+.theme-blue .link.mod-color-deep:hover, .theme-blue .mod-color-deep .link:hover,
+.theme-blue .mod-color-deep a:hover, .theme-blue a.mod-color-deep:hover {
+    color: #e3f2fd !important;
+}
+
+.theme-lightblue .link.mod-color-deep:hover,
+.theme-lightblue .mod-color-deep .link:hover,
+.theme-lightblue .mod-color-deep a:hover,
+.theme-lightblue a.mod-color-deep:hover {
+    color: #e1f5fe !important;
+}
+
+.theme-cyan .link.mod-color-deep:hover, .theme-cyan .mod-color-deep .link:hover,
+.theme-cyan .mod-color-deep a:hover, .theme-cyan a.mod-color-deep:hover {
+    color: #e0f7fa !important;
+}
+
+.theme-teal .link.mod-color-deep:hover, .theme-teal .mod-color-deep .link:hover,
+.theme-teal .mod-color-deep a:hover, .theme-teal a.mod-color-deep:hover {
+    color: #e0f2f1 !important;
+}
+
+.theme-green .link.mod-color-deep:hover,
+.theme-green .mod-color-deep .link:hover, .theme-green .mod-color-deep a:hover,
+.theme-green a.mod-color-deep:hover {
+    color: #e8f5e9 !important;
+}
+
+.theme-lightgreen .link.mod-color-deep:hover,
+.theme-lightgreen .mod-color-deep .link:hover,
+.theme-lightgreen .mod-color-deep a:hover,
+.theme-lightgreen a.mod-color-deep:hover {
+    color: #f1f8e9 !important;
+}
+
+.theme-lime .link.mod-color-deep:hover, .theme-lime .mod-color-deep .link:hover,
+.theme-lime .mod-color-deep a:hover, .theme-lime a.mod-color-deep:hover {
+    color: #f9fbe7 !important;
+}
+
+.theme-yellow .link.mod-color-deep:hover,
+.theme-yellow .mod-color-deep .link:hover, .theme-yellow .mod-color-deep a:hover,
+.theme-yellow a.mod-color-deep:hover {
+    color: #fffde7 !important;
+}
+
+.theme-amber .link.mod-color-deep:hover,
+.theme-amber .mod-color-deep .link:hover, .theme-amber .mod-color-deep a:hover,
+.theme-amber a.mod-color-deep:hover {
+    color: #fff8e1 !important;
+}
+
+.theme-orange .link.mod-color-deep:hover,
+.theme-orange .mod-color-deep .link:hover, .theme-orange .mod-color-deep a:hover,
+.theme-orange a.mod-color-deep:hover {
+    color: #fff3e0 !important;
+}
+
+.theme-deeporange .link.mod-color-deep:hover,
+.theme-deeporange .mod-color-deep .link:hover,
+.theme-deeporange .mod-color-deep a:hover,
+.theme-deeporange a.mod-color-deep:hover {
+    color: #fbe9e7 !important;
+}
+
+.link.mod-color-deep:active, .mod-color-deep .link:active,
+.mod-color-deep a:active, a.mod-color-deep:active {
+    color: #b0bec4 !important;
+}
+
+.theme-red .link.mod-color-deep:active, .theme-red .mod-color-deep .link:active,
+.theme-red .mod-color-deep a:active, .theme-red a.mod-color-deep:active {
+    color: #ef9a9a !important;
+}
+
+.theme-pink .link.mod-color-deep:active,
+.theme-pink .mod-color-deep .link:active, .theme-pink .mod-color-deep a:active,
+.theme-pink a.mod-color-deep:active {
+    color: #f48fb1 !important;
+}
+
+.theme-purple .link.mod-color-deep:active,
+.theme-purple .mod-color-deep .link:active,
+.theme-purple .mod-color-deep a:active, .theme-purple a.mod-color-deep:active {
+    color: #ce93d8 !important;
+}
+
+.theme-deeppurple .link.mod-color-deep:active,
+.theme-deeppurple .mod-color-deep .link:active,
+.theme-deeppurple .mod-color-deep a:active,
+.theme-deeppurple a.mod-color-deep:active {
+    color: #b39ddb !important;
+}
+
+.theme-indigo .link.mod-color-deep:active,
+.theme-indigo .mod-color-deep .link:active,
+.theme-indigo .mod-color-deep a:active, .theme-indigo a.mod-color-deep:active {
+    color: #9fa8da !important;
+}
+
+.theme-blue .link.mod-color-deep:active,
+.theme-blue .mod-color-deep .link:active, .theme-blue .mod-color-deep a:active,
+.theme-blue a.mod-color-deep:active {
+    color: #90caf9 !important;
+}
+
+.theme-lightblue .link.mod-color-deep:active,
+.theme-lightblue .mod-color-deep .link:active,
+.theme-lightblue .mod-color-deep a:active,
+.theme-lightblue a.mod-color-deep:active {
+    color: #81d4fa !important;
+}
+
+.theme-cyan .link.mod-color-deep:active,
+.theme-cyan .mod-color-deep .link:active, .theme-cyan .mod-color-deep a:active,
+.theme-cyan a.mod-color-deep:active {
+    color: #80deea !important;
+}
+
+.theme-teal .link.mod-color-deep:active,
+.theme-teal .mod-color-deep .link:active, .theme-teal .mod-color-deep a:active,
+.theme-teal a.mod-color-deep:active {
+    color: #80cbc4 !important;
+}
+
+.theme-green .link.mod-color-deep:active,
+.theme-green .mod-color-deep .link:active, .theme-green .mod-color-deep a:active,
+.theme-green a.mod-color-deep:active {
+    color: #a5d6a7 !important;
+}
+
+.theme-lightgreen .link.mod-color-deep:active,
+.theme-lightgreen .mod-color-deep .link:active,
+.theme-lightgreen .mod-color-deep a:active,
+.theme-lightgreen a.mod-color-deep:active {
+    color: #c5e1a5 !important;
+}
+
+.theme-lime .link.mod-color-deep:active,
+.theme-lime .mod-color-deep .link:active, .theme-lime .mod-color-deep a:active,
+.theme-lime a.mod-color-deep:active {
+    color: #e6ee9c !important;
+}
+
+.theme-yellow .link.mod-color-deep:active,
+.theme-yellow .mod-color-deep .link:active,
+.theme-yellow .mod-color-deep a:active, .theme-yellow a.mod-color-deep:active {
+    color: #fff59d !important;
+}
+
+.theme-amber .link.mod-color-deep:active,
+.theme-amber .mod-color-deep .link:active, .theme-amber .mod-color-deep a:active,
+.theme-amber a.mod-color-deep:active {
+    color: #ffe082 !important;
+}
+
+.theme-orange .link.mod-color-deep:active,
+.theme-orange .mod-color-deep .link:active,
+.theme-orange .mod-color-deep a:active, .theme-orange a.mod-color-deep:active {
+    color: #ffcc80 !important;
+}
+
+.theme-deeporange .link.mod-color-deep:active,
+.theme-deeporange .mod-color-deep .link:active,
+.theme-deeporange .mod-color-deep a:active,
+.theme-deeporange a.mod-color-deep:active {
+    color: #ffab91 !important;
+}
+
 label[for] {
     cursor: pointer;
 }
@@ -1130,6 +1417,7 @@ body.mod-overlay-on {
     z-index: 1;
     padding-bottom: 100px;
     min-width: 1200px;
+    overflow-x: hidden;
 }
 
 @media all {
@@ -4956,6 +5244,10 @@ body.mod-iframe .header-post-title a.back+h1 {
             border-radius: 50%;
 }
 
+#header.mod-hidden {
+    padding: 0;
+}
+
 @media all and (max-width:1200px) {
     #header .layout-wrapper {
         padding-left: 195px;
@@ -5228,7 +5520,119 @@ body.mod-iframe .header-post-title a.back+h1 {
 .main-banner {
     background: #ebebeb;
     border-bottom: 1px solid #dbdbdb;
+    margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.main-banner:first-child {
+    margin-top: 0;
+}
+
+.main-banner+.main-banner {
+    margin-top: -1em;
+}
+
+.main-banner.mod-color-deep, .mod-color-deep .main-banner {
+    background: #367fa1;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.theme-red .main-banner.mod-color-deep, .theme-red .mod-color-deep .main-banner {
+    background: #d60000;
+}
+
+.theme-pink .main-banner.mod-color-deep,
+.theme-pink .mod-color-deep .main-banner {
+    background: #c51162;
+}
+
+.theme-purple .main-banner.mod-color-deep,
+.theme-purple .mod-color-deep .main-banner {
+    background: #a0f;
+}
+
+.theme-deeppurple .main-banner.mod-color-deep,
+.theme-deeppurple .mod-color-deep .main-banner {
+    background: #6200ea;
+}
+
+.theme-indigo .main-banner.mod-color-deep,
+.theme-indigo .mod-color-deep .main-banner {
+    background: #304ffe;
+}
+
+.theme-blue .main-banner.mod-color-deep,
+.theme-blue .mod-color-deep .main-banner {
+    background: #2962ff;
+}
+
+.theme-lightblue .main-banner.mod-color-deep,
+.theme-lightblue .mod-color-deep .main-banner {
+    background: #0091ea;
+}
+
+.theme-cyan .main-banner.mod-color-deep,
+.theme-cyan .mod-color-deep .main-banner {
+    background: #00b8d4;
+}
+
+.theme-teal .main-banner.mod-color-deep,
+.theme-teal .mod-color-deep .main-banner {
+    background: #00bfa5;
+}
+
+.theme-green .main-banner.mod-color-deep,
+.theme-green .mod-color-deep .main-banner {
+    background: #00c853;
+}
+
+.theme-lightgreen .main-banner.mod-color-deep,
+.theme-lightgreen .mod-color-deep .main-banner {
+    background: #64dd17;
+}
+
+.theme-lime .main-banner.mod-color-deep,
+.theme-lime .mod-color-deep .main-banner {
+    background: #aeea00;
+}
+
+.theme-yellow .main-banner.mod-color-deep,
+.theme-yellow .mod-color-deep .main-banner {
+    background: #ffd600;
+}
+
+.theme-amber .main-banner.mod-color-deep,
+.theme-amber .mod-color-deep .main-banner {
+    background: #ffab00;
+}
+
+.theme-orange .main-banner.mod-color-deep,
+.theme-orange .mod-color-deep .main-banner {
+    background: #ff6d00;
+}
+
+.theme-deeporange .main-banner.mod-color-deep,
+.theme-deeporange .mod-color-deep .main-banner {
+    background: #dd2c00;
+}
+
+.main-banner.mod-color-deep+.main-banner,
+.mod-color-deep .main-banner+.main-banner {
+    margin-top: -2em;
+}
+
+.main-banner .main-banner-more {
+    padding: 2em 0;
+    text-align: center;
+}
+
+.main-banner.mod-gallery h2, .main-banner.mod-gallery h3,
+.main-banner.mod-gallery h4, .main-banner.mod-gallery h5,
+.main-banner.mod-gallery h6 {
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 100;
 }
 
 #footer {
@@ -6221,6 +6625,411 @@ button[type=button]:focus {
     background-color: #ffab91;
 }
 
+.button.mod-color-deep, .mod-color-deep .button {
+    color: #fff !important;
+    border-color: #edf0f2;
+}
+
+.theme-red .button.mod-color-deep, .theme-red .mod-color-deep .button {
+    border-color: #ffebee;
+}
+
+.theme-pink .button.mod-color-deep, .theme-pink .mod-color-deep .button {
+    border-color: #fce4eb;
+}
+
+.theme-purple .button.mod-color-deep, .theme-purple .mod-color-deep .button {
+    border-color: #f3e5f5;
+}
+
+.theme-deeppurple .button.mod-color-deep,
+.theme-deeppurple .mod-color-deep .button {
+    border-color: #ede7f6;
+}
+
+.theme-indigo .button.mod-color-deep, .theme-indigo .mod-color-deep .button {
+    border-color: #e8eaf6;
+}
+
+.theme-blue .button.mod-color-deep, .theme-blue .mod-color-deep .button {
+    border-color: #e3f2fd;
+}
+
+.theme-lightblue .button.mod-color-deep,
+.theme-lightblue .mod-color-deep .button {
+    border-color: #e1f5fe;
+}
+
+.theme-cyan .button.mod-color-deep, .theme-cyan .mod-color-deep .button {
+    border-color: #e0f7fa;
+}
+
+.theme-teal .button.mod-color-deep, .theme-teal .mod-color-deep .button {
+    border-color: #e0f2f1;
+}
+
+.theme-green .button.mod-color-deep, .theme-green .mod-color-deep .button {
+    border-color: #e8f5e9;
+}
+
+.theme-lightgreen .button.mod-color-deep,
+.theme-lightgreen .mod-color-deep .button {
+    border-color: #f1f8e9;
+}
+
+.theme-lime .button.mod-color-deep, .theme-lime .mod-color-deep .button {
+    border-color: #f9fbe7;
+}
+
+.theme-yellow .button.mod-color-deep, .theme-yellow .mod-color-deep .button {
+    border-color: #fffde7;
+}
+
+.theme-amber .button.mod-color-deep, .theme-amber .mod-color-deep .button {
+    border-color: #fff8e1;
+}
+
+.theme-orange .button.mod-color-deep, .theme-orange .mod-color-deep .button {
+    border-color: #fff3e0;
+}
+
+.theme-deeporange .button.mod-color-deep,
+.theme-deeporange .mod-color-deep .button {
+    border-color: #fbe9e7;
+}
+
+.button.mod-color-deep:hover, .mod-color-deep .button:hover {
+    background: #edf0f2;
+    color: #253137 !important;
+    text-shadow: none;
+}
+
+.theme-red .button.mod-color-deep:hover,
+.theme-red .mod-color-deep .button:hover {
+    background: #ffebee;
+}
+
+.theme-pink .button.mod-color-deep:hover,
+.theme-pink .mod-color-deep .button:hover {
+    background: #fce4eb;
+}
+
+.theme-purple .button.mod-color-deep:hover,
+.theme-purple .mod-color-deep .button:hover {
+    background: #f3e5f5;
+}
+
+.theme-deeppurple .button.mod-color-deep:hover,
+.theme-deeppurple .mod-color-deep .button:hover {
+    background: #ede7f6;
+}
+
+.theme-indigo .button.mod-color-deep:hover,
+.theme-indigo .mod-color-deep .button:hover {
+    background: #e8eaf6;
+}
+
+.theme-blue .button.mod-color-deep:hover,
+.theme-blue .mod-color-deep .button:hover {
+    background: #e3f2fd;
+}
+
+.theme-lightblue .button.mod-color-deep:hover,
+.theme-lightblue .mod-color-deep .button:hover {
+    background: #e1f5fe;
+}
+
+.theme-cyan .button.mod-color-deep:hover,
+.theme-cyan .mod-color-deep .button:hover {
+    background: #e0f7fa;
+}
+
+.theme-teal .button.mod-color-deep:hover,
+.theme-teal .mod-color-deep .button:hover {
+    background: #e0f2f1;
+}
+
+.theme-green .button.mod-color-deep:hover,
+.theme-green .mod-color-deep .button:hover {
+    background: #e8f5e9;
+}
+
+.theme-lightgreen .button.mod-color-deep:hover,
+.theme-lightgreen .mod-color-deep .button:hover {
+    background: #f1f8e9;
+}
+
+.theme-lime .button.mod-color-deep:hover,
+.theme-lime .mod-color-deep .button:hover {
+    background: #f9fbe7;
+}
+
+.theme-yellow .button.mod-color-deep:hover,
+.theme-yellow .mod-color-deep .button:hover {
+    background: #fffde7;
+}
+
+.theme-amber .button.mod-color-deep:hover,
+.theme-amber .mod-color-deep .button:hover {
+    background: #fff8e1;
+}
+
+.theme-orange .button.mod-color-deep:hover,
+.theme-orange .mod-color-deep .button:hover {
+    background: #fff3e0;
+}
+
+.theme-deeporange .button.mod-color-deep:hover,
+.theme-deeporange .mod-color-deep .button:hover {
+    background: #fbe9e7;
+}
+
+.theme-red .button.mod-color-deep:hover,
+.theme-red .mod-color-deep .button:hover {
+    color: #b51c1c !important;
+}
+
+.theme-pink .button.mod-color-deep:hover,
+.theme-pink .mod-color-deep .button:hover {
+    color: #880e4f !important;
+}
+
+.theme-purple .button.mod-color-deep:hover,
+.theme-purple .mod-color-deep .button:hover {
+    color: #4a148c !important;
+}
+
+.theme-deeppurple .button.mod-color-deep:hover,
+.theme-deeppurple .mod-color-deep .button:hover {
+    color: #311b92 !important;
+}
+
+.theme-indigo .button.mod-color-deep:hover,
+.theme-indigo .mod-color-deep .button:hover {
+    color: #1a237e !important;
+}
+
+.theme-blue .button.mod-color-deep:hover,
+.theme-blue .mod-color-deep .button:hover {
+    color: #0d47a1 !important;
+}
+
+.theme-lightblue .button.mod-color-deep:hover,
+.theme-lightblue .mod-color-deep .button:hover {
+    color: #01579b !important;
+}
+
+.theme-cyan .button.mod-color-deep:hover,
+.theme-cyan .mod-color-deep .button:hover {
+    color: #006064 !important;
+}
+
+.theme-teal .button.mod-color-deep:hover,
+.theme-teal .mod-color-deep .button:hover {
+    color: #004d40 !important;
+}
+
+.theme-green .button.mod-color-deep:hover,
+.theme-green .mod-color-deep .button:hover {
+    color: #1b5e20 !important;
+}
+
+.theme-lightgreen .button.mod-color-deep:hover,
+.theme-lightgreen .mod-color-deep .button:hover {
+    color: #33691e !important;
+}
+
+.theme-lime .button.mod-color-deep:hover,
+.theme-lime .mod-color-deep .button:hover {
+    color: #827717 !important;
+}
+
+.theme-yellow .button.mod-color-deep:hover,
+.theme-yellow .mod-color-deep .button:hover {
+    color: #f57f17 !important;
+}
+
+.theme-amber .button.mod-color-deep:hover,
+.theme-amber .mod-color-deep .button:hover {
+    color: #ff6f00 !important;
+}
+
+.theme-orange .button.mod-color-deep:hover,
+.theme-orange .mod-color-deep .button:hover {
+    color: #e65100 !important;
+}
+
+.theme-deeporange .button.mod-color-deep:hover,
+.theme-deeporange .mod-color-deep .button:hover {
+    color: #bf360c !important;
+}
+
+.button.mod-color-deep:active, .mod-color-deep .button:active {
+    background: #b0bec4;
+    color: #253137 !important;
+    text-shadow: none;
+}
+
+.theme-red .button.mod-color-deep:active,
+.theme-red .mod-color-deep .button:active {
+    background: #ef9a9a;
+}
+
+.theme-pink .button.mod-color-deep:active,
+.theme-pink .mod-color-deep .button:active {
+    background: #f48fb1;
+}
+
+.theme-purple .button.mod-color-deep:active,
+.theme-purple .mod-color-deep .button:active {
+    background: #ce93d8;
+}
+
+.theme-deeppurple .button.mod-color-deep:active,
+.theme-deeppurple .mod-color-deep .button:active {
+    background: #b39ddb;
+}
+
+.theme-indigo .button.mod-color-deep:active,
+.theme-indigo .mod-color-deep .button:active {
+    background: #9fa8da;
+}
+
+.theme-blue .button.mod-color-deep:active,
+.theme-blue .mod-color-deep .button:active {
+    background: #90caf9;
+}
+
+.theme-lightblue .button.mod-color-deep:active,
+.theme-lightblue .mod-color-deep .button:active {
+    background: #81d4fa;
+}
+
+.theme-cyan .button.mod-color-deep:active,
+.theme-cyan .mod-color-deep .button:active {
+    background: #80deea;
+}
+
+.theme-teal .button.mod-color-deep:active,
+.theme-teal .mod-color-deep .button:active {
+    background: #80cbc4;
+}
+
+.theme-green .button.mod-color-deep:active,
+.theme-green .mod-color-deep .button:active {
+    background: #a5d6a7;
+}
+
+.theme-lightgreen .button.mod-color-deep:active,
+.theme-lightgreen .mod-color-deep .button:active {
+    background: #c5e1a5;
+}
+
+.theme-lime .button.mod-color-deep:active,
+.theme-lime .mod-color-deep .button:active {
+    background: #e6ee9c;
+}
+
+.theme-yellow .button.mod-color-deep:active,
+.theme-yellow .mod-color-deep .button:active {
+    background: #fff59d;
+}
+
+.theme-amber .button.mod-color-deep:active,
+.theme-amber .mod-color-deep .button:active {
+    background: #ffe082;
+}
+
+.theme-orange .button.mod-color-deep:active,
+.theme-orange .mod-color-deep .button:active {
+    background: #ffcc80;
+}
+
+.theme-deeporange .button.mod-color-deep:active,
+.theme-deeporange .mod-color-deep .button:active {
+    background: #ffab91;
+}
+
+.theme-red .button.mod-color-deep:active,
+.theme-red .mod-color-deep .button:active {
+    color: #b51c1c !important;
+}
+
+.theme-pink .button.mod-color-deep:active,
+.theme-pink .mod-color-deep .button:active {
+    color: #880e4f !important;
+}
+
+.theme-purple .button.mod-color-deep:active,
+.theme-purple .mod-color-deep .button:active {
+    color: #4a148c !important;
+}
+
+.theme-deeppurple .button.mod-color-deep:active,
+.theme-deeppurple .mod-color-deep .button:active {
+    color: #311b92 !important;
+}
+
+.theme-indigo .button.mod-color-deep:active,
+.theme-indigo .mod-color-deep .button:active {
+    color: #1a237e !important;
+}
+
+.theme-blue .button.mod-color-deep:active,
+.theme-blue .mod-color-deep .button:active {
+    color: #0d47a1 !important;
+}
+
+.theme-lightblue .button.mod-color-deep:active,
+.theme-lightblue .mod-color-deep .button:active {
+    color: #01579b !important;
+}
+
+.theme-cyan .button.mod-color-deep:active,
+.theme-cyan .mod-color-deep .button:active {
+    color: #006064 !important;
+}
+
+.theme-teal .button.mod-color-deep:active,
+.theme-teal .mod-color-deep .button:active {
+    color: #004d40 !important;
+}
+
+.theme-green .button.mod-color-deep:active,
+.theme-green .mod-color-deep .button:active {
+    color: #1b5e20 !important;
+}
+
+.theme-lightgreen .button.mod-color-deep:active,
+.theme-lightgreen .mod-color-deep .button:active {
+    color: #33691e !important;
+}
+
+.theme-lime .button.mod-color-deep:active,
+.theme-lime .mod-color-deep .button:active {
+    color: #827717 !important;
+}
+
+.theme-yellow .button.mod-color-deep:active,
+.theme-yellow .mod-color-deep .button:active {
+    color: #f57f17 !important;
+}
+
+.theme-amber .button.mod-color-deep:active,
+.theme-amber .mod-color-deep .button:active {
+    color: #ff6f00 !important;
+}
+
+.theme-orange .button.mod-color-deep:active,
+.theme-orange .mod-color-deep .button:active {
+    color: #e65100 !important;
+}
+
+.theme-deeporange .button.mod-color-deep:active,
+.theme-deeporange .mod-color-deep .button:active {
+    color: #bf360c !important;
+}
+
 .button-large {
     font-size: 1.25em;
 }
@@ -6978,6 +7787,44 @@ button[type=button]:focus {
     border-bottom: 8px solid #dbdbdb;
 }
 
+.card {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .125);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .125);
+    padding: .75em 16px;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+}
+
+.card h2:first-child, .card h3:first-child, .card h4:first-child,
+.card h5:first-child, .card h6:first-child {
+    border-bottom: 1px solid #d9d9d9;
+    margin: 0 -16px 1em;
+    padding: 0 16px .75em;
+}
+
+.card h2:first-child+h2, .card h2:first-child+h3, .card h2:first-child+h4,
+.card h2:first-child+h5, .card h2:first-child+h6, .card h3:first-child+h2,
+.card h3:first-child+h3, .card h3:first-child+h4, .card h3:first-child+h5,
+.card h3:first-child+h6, .card h4:first-child+h2, .card h4:first-child+h3,
+.card h4:first-child+h4, .card h4:first-child+h5, .card h4:first-child+h6,
+.card h5:first-child+h2, .card h5:first-child+h3, .card h5:first-child+h4,
+.card h5:first-child+h5, .card h5:first-child+h6, .card h6:first-child+h2,
+.card h6:first-child+h3, .card h6:first-child+h4, .card h6:first-child+h5,
+.card h6:first-child+h6 {
+    margin-top: 0;
+}
+
+.card .card-actions {
+    border-top: 1px solid #d9d9d9;
+    margin: 1.5em -16px -.75em;
+    padding: .5em 16px .75em;
+    background: #fafafa;
+}
+
 .circleimg {
     display: inline-block;
     position: relative;
@@ -7140,6 +7987,10 @@ button[type=button]:focus {
     padding: 0;
 }
 
+.gallery .picrow {
+    margin-right: -100%;
+}
+
 .gallery .photo-container {
     float: left;
     position: relative;
@@ -7153,7 +8004,6 @@ button[type=button]:focus {
 
 .gallery-row {
     overflow: hidden;
-    margin-right: -.1px;
 }
 
 .gallery-row a:hover {
@@ -8341,7 +9191,7 @@ a.link-itme:active .link-itme-number {
 }
 
 .list-thread dl {
-    padding: .75em .75em .75em 5.4375em;
+    padding: .75em .75em .75em 4.8125em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -8497,8 +9347,8 @@ a.link-itme:active .link-itme-number {
 }
 
 .list-thread dl .user .avatar {
-    width: 65px;
-    left: -75px;
+    width: 55px;
+    left: -65px;
 }
 
 .list-thread dl dd p.title .tag {

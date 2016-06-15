@@ -8,6 +8,24 @@ a, .link{
 	&:active{
 		.theme( color, 200 );
 	}
+	.mod-color-deep({
+		.theme( color, 100 ) !important;
+		&:hover{
+			.theme( color, 50 ) !important;
+		}
+		&:active{
+			.theme( color, 200 ) !important;
+		}
+		/*
+		color:      #fff !important;
+		&:hover{
+			color:  #fff !important;
+		}
+		&:active{
+			.theme(color, 200) !important;
+		}
+		*/
+	})
 }
 
 label[for]{

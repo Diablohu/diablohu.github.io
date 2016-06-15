@@ -192,6 +192,25 @@
     background: linear-gradient(45deg, @grid-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @grid-color 75%, @grid-color 0), linear-gradient(45deg, @grid-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @grid-color 75%, @grid-color 0), transparent;
     background-size:    2px 2px;
     background-position:0 0, 1px 1px;
+    @-moz-document url-prefix() {
+        @solid-color:rgba(0, 0, 0, (@opacity / 2));
+        background-image: linear-gradient(to bottom, @solid-color, @solid-color);
+    }
+}
+
+
+
+
+
+
+
+
+
+// 深色模式
+.mod-color-deep( @rules ){
+    .mod-color-deep &, &.mod-color-deep{
+        @rules();
+    }
 }
 
 

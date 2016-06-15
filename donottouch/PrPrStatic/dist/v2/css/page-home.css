@@ -1546,6 +1546,7 @@
     counter-reset: a;
     position: relative;
     z-index: 2;
+    border-right: 10px solid transparent;
 }
 
 .page-home-section[section=rankings] dt {
@@ -1569,7 +1570,7 @@
     }
 }
 
-.page-home-section[section=rankings] dt+dd {
+.page-home-section[section=rankings] dt~dd:nth-of-type(2n+1) {
     margin-left: -10px;
 }
 
@@ -1582,13 +1583,14 @@
 
 .page-home-section[section=rankings] dl+dl {
     border-right: 0;
+    border-left: 10px solid transparent;
 }
 
 .page-home-section[section=rankings] dl+dl dt {
     padding-left: 20px;
 }
 
-.page-home-section[section=rankings] dl+dl dt+dd {
+.page-home-section[section=rankings] dl+dl dt~dd:nth-of-type(2n+1) {
     margin-left: 0;
 }
 
@@ -1845,7 +1847,7 @@
         width: 25%;
     }
 
-    .page-home-section[section=rankings] dt+dd {
+    .page-home-section[section=rankings] dt~dd:nth-of-type(2n+1) {
         margin-left: 0;
     }
 

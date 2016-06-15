@@ -1736,6 +1736,172 @@ setInterval(function () {
         el.calc();
     });
 }, 60 * 1000);
+
+var Slider = function () {
+    function Slider(el, settings) {
+        var _this11 = this;
+
+        _classCallCheck(this, Slider);
+
+        if (typeof Slider.index == 'undefined') {
+            Slider.index = 0;
+        }
+
+        if ((typeof el === 'undefined' ? 'undefined' : _typeof(el)) == 'object' && el.el) return new Slider(el.el, el);
+
+        delete settings.el;
+
+        this._ = $.extend({}, Slider.defaults, settings, !0);
+
+        this.$el = this.getEl(el);
+        this.$slides = this.getEl(this._.elSlides);
+        this.$controls = this.getEl(this._.elControls) || $('<div class="controls"/>').appendTo(this.$el);
+        this.radios = [];
+        this.switches = [];
+        this.cur = 1;
+        this.count = this.$slides.length;
+        this.timeoutNext = this.timeoutStart();
+        this.index = Slider.index;
+
+        this.$slides.each(function (i, slide) {
+            _this11.slideInit(i, slide);
+        });
+
+        this.$el.on('change.radioChange', 'input[type="radio"]', function (evt) {
+            _this11.radioChange(evt);
+        }).on('mousemove.radioChange', function () {
+            _this11.timeoutClear();
+        }).hover(function () {
+            return _this11.timeoutNext = _this11.timeoutStart();
+        });
+
+        $('<button/>', {
+            'type': 'button',
+            'class': 'prev'
+        }).on('click', function () {
+            _this11.goPrev();
+        }).prependTo(this.$controls);
+
+        $('<button/>', {
+            'type': 'button',
+            'class': 'next'
+        }).on('click', function () {
+            _this11.goNext();
+        }).appendTo(this.$controls);
+
+        Slider.index++;
+    }
+
+    _createClass(Slider, [{
+        key: 'getEl',
+        value: function getEl(el) {
+            if (el) {
+                if (el instanceof jQuery) {
+                    return el;
+                } else if (typeof el == 'string') {
+                    return this.$el.find(el);
+                } else {
+                    return $(el);
+                }
+            }
+            return !1;
+        }
+    }, {
+        key: 'slideInit',
+        value: function slideInit(i, slide) {
+            this.radios[i] = $('<input/>', {
+                'type': 'radio',
+                'name': 'page-home-section-hot-' + this.index,
+                'id': 'page-home-section-hot-' + this.index + '-' + (i + 1),
+                'value': i + 1
+            }).prop('checked', !i).prependTo(this.$el);
+
+            this.switches[i] = this._.createSwitch('page-home-section-hot-' + this.index + '-' + (i + 1), i + 1).appendTo(this.$controls);
+
+            return this._.callbackSlideInit(i, slide);
+        }
+    }, {
+        key: 'radioChange',
+        value: function radioChange(evt) {
+            this.cur = parseInt(evt.currentTarget.getAttribute('value'));
+        }
+    }, {
+        key: 'goPrev',
+        value: function goPrev() {
+            this.go(this.cur - 1);
+        }
+    }, {
+        key: 'goNext',
+        value: function goNext() {
+            this.go(this.cur + 1);
+        }
+    }, {
+        key: 'getOrder',
+        value: function getOrder(order) {
+            order = parseInt(order);
+            if (order < 1) order = this.count;
+            if (order > this.count) order = 1;
+            if (!order) return !1;
+            return order;
+        }
+    }, {
+        key: 'getOrderNext',
+        value: function getOrderNext() {
+            return this.getOrder(this.cur + 1);
+        }
+    }, {
+        key: 'go',
+        value: function go(order) {
+            if (typeof order == 'undefined') return;
+
+            order = this.getOrder(order);
+
+            this.radios[order - 1].prop('checked', !0).trigger('change');
+
+            this.timeoutStart();
+        }
+    }, {
+        key: 'timeoutStart',
+        value: function timeoutStart(time) {
+            var _this12 = this;
+
+            time = time || 5000;
+            this.timeoutClear();
+
+            this.$el.attr('pending', this.getOrderNext());
+            return this.timeoutNext = setTimeout(function () {
+                _this12.goNext();
+            }, this._.interval);
+        }
+    }, {
+        key: 'timeoutClear',
+        value: function timeoutClear() {
+            if (!this.timeoutNext) return !0;
+
+            clearTimeout(this.timeoutNext);
+            this.timeoutNext = null;
+            this.$el.removeAttr('pending');
+            return !0;
+        }
+    }]);
+
+    return Slider;
+}();
+
+Slider.defaults = {
+    'interval': 5000,
+
+    'elSlides': '.slide',
+    'elControls': null,
+
+    'createSwitch': function createSwitch(id, order) {
+        return $('<label/>', {
+            'for': id,
+            'data-order': order });
+    },
+
+    'callbackSlideInit': function callbackSlideInit() {}
+};
 new Component('.sticky', 'sticky-init', function (el) {
     var offsetTop = !1,
         $el = $(el);
@@ -1778,7 +1944,7 @@ var componentEditor = new Component('textarea[trumbowyg]', 'trumbowyg-init', fun
 
 var Editor = function () {
     function Editor(el, settings) {
-        var _this11 = this;
+        var _this13 = this;
 
         _classCallCheck(this, Editor);
 
@@ -1801,8 +1967,8 @@ var Editor = function () {
             this.ready();
         } else {
             this.getResource('js', function () {
-                _this11.getResource('lang');
-                _this11.getResource('uploader');
+                _this13.getResource('lang');
+                _this13.getResource('uploader');
             });
             this.getResource('css');
         }
@@ -1830,12 +1996,12 @@ var Editor = function () {
     }, {
         key: 'getResource',
         value: function getResource(t, callback) {
-            var _this12 = this;
+            var _this14 = this;
 
             var cb = function cb() {
                 if (callback) callback();
                 Editor.ready[t] = !0;
-                _this12.readyCheck(t);
+                _this14.readyCheck(t);
             };
 
             if (!t || typeof Editor.ready[t] == 'undefined') return !1;
@@ -1857,7 +2023,7 @@ var Editor = function () {
     }, {
         key: 'init',
         value: function init() {
-            var _this13 = this;
+            var _this15 = this;
 
             Editor.init();
             this.$.trumbowyg({
@@ -1894,9 +2060,9 @@ var Editor = function () {
 
             this.$ed = this.trumbowyg.$ed.on({
                 'input': function input() {
-                    clearTimeout(_this13.editorSyncTimeout);
-                    _this13.editorSyncTimeout = setTimeout(function () {
-                        _this13.trumbowyg.syncTextarea();
+                    clearTimeout(_this15.editorSyncTimeout);
+                    _this15.editorSyncTimeout = setTimeout(function () {
+                        _this15.trumbowyg.syncTextarea();
                     }, 100);
                 }
             });

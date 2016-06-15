@@ -81,8 +81,8 @@ function imgOk( img, callback ){
     }else{
         $img = $(img)
     }
-        
-    $img.on('load', callback)
+
+    $img.on('load error', callback)
 
     // http://stackoverflow.com/questions/1977871/check-if-an-image-is-loaded-no-errors-in-javascript
     // During the onload event, IE correctly identifies any images that

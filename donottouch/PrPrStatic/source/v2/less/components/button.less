@@ -29,6 +29,21 @@ button[type="button"]{
         color:  #fff !important;
 	    .theme( background-color, 200 );
     }
+    .mod-color-deep({
+        color:      #fff !important;
+        .theme(border-color, 50);
+        //background:     fade(@color-900, 50%);
+        &:hover{
+            .theme(background, 50);
+            .theme(color, 900) !important;
+            text-shadow:    none;
+        }
+        &:active{
+            .theme(background, 200);
+            .theme(color, 900) !important;
+            text-shadow:    none;
+        }
+    });
 }
 
 
