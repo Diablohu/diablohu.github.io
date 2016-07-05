@@ -196,20 +196,19 @@ textarea {
     font: inherit;
 }
 
-.center {
-    text-align: center;
-}
-
-.clear:after, .clear:before {
-    display: block;
-    clear: both;
-    visibility: hidden;
-    height: 0;
-    content: '';
-}
-
 .clear {
+    clear: both;
+    display: block;
+}
+
+.card:after, .clearfix:after {
+    content: "";
+    display: table;
     zoom: 1;
+    line-height: 0;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
 }
 
 .ellipsis {
@@ -218,12 +217,54 @@ textarea {
     text-overflow: ellipsis;
 }
 
+:active, :focus {
+    outline: 0;
+}
+
+.disable, .disabled, [disabled] {
+    pointer-events: none;
+}
+
+table {
+    font-size: 1em;
+}
+
+.center, .text-center {
+    text-align: center;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.full-width {
+    width: 100%;
+}
+
 .mt0 {
     margin-top: 0 !important;
 }
 
 .mt40 {
     margin-top: 40px !important;
+}
+
+:first-child {
+    margin-top: 0;
+}
+
+:last-child {
+    margin-bottom: 0;
+}
+
+hr {
+    border: 0 solid #d9d9d9;
+    border-top-width: 1px;
+    margin: 1.5em auto;
 }
 
 @-webkit-keyframes fadeIn {
@@ -447,6 +488,1591 @@ textarea {
     padding: 0;
 }
 
+label input[type=checkbox], label input[type=radio] {
+    position: absolute;
+    z-index: -100;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+label input[type=checkbox]~.label, label input[type=radio]~.label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1.7em;
+    min-height: 1.7em;
+    margin-right: .5em;
+    vertical-align: top;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+label input[type=checkbox]~.label:before, label input[type=radio]~.label:before {
+    content: "";
+    width: 1.15em;
+    height: 1.15em;
+    line-height: 1.15em;
+    text-align: center;
+    margin-right: .5em;
+    display: block;
+    border: 2px solid #e0e0e0;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    top: 4px;
+    -webkit-transition: background-color .15s ease-out, border .15s ease-out;
+            transition: background-color .15s ease-out, border .15s ease-out;
+}
+
+label input[type=checkbox]~.label:after, label input[type=radio]~.label:after {
+    content: "";
+    width: 1.65em;
+    height: 1.65em;
+    position: absolute;
+    display: inline-block;
+    vertical-align: sub;
+    z-index: 1;
+    left: -.25em;
+    margin-top: 0;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+}
+
+label input[type=checkbox]~.label:hover:before,
+label input[type=radio]~.label:hover:before {
+    border-color: #bdbdbd;
+    background-color: #fafafa;
+}
+
+label input[type=checkbox]~.label:active:before,
+label input[type=radio]~.label:active:before {
+    border-color: #eee;
+    background-color: #fff;
+}
+
+label input[type=checkbox]:focus~.label:after,
+label input[type=radio]:focus~.label:after {
+    -webkit-animation: label-focus .15s linear;
+            animation: label-focus .15s linear;
+}
+
+label input[type=checkbox]:checked~.label:before,
+label input[type=radio]:checked~.label:before {
+    background: #367fa1;
+    border-color: #367fa1;
+}
+
+.theme-red label input[type=checkbox]:checked~.label:before,
+.theme-red label input[type=radio]:checked~.label:before {
+    background: #d60000;
+}
+
+.theme-pink label input[type=checkbox]:checked~.label:before,
+.theme-pink label input[type=radio]:checked~.label:before {
+    background: #c51162;
+}
+
+.theme-purple label input[type=checkbox]:checked~.label:before,
+.theme-purple label input[type=radio]:checked~.label:before {
+    background: #a0f;
+}
+
+.theme-deeppurple label input[type=checkbox]:checked~.label:before,
+.theme-deeppurple label input[type=radio]:checked~.label:before {
+    background: #6200ea;
+}
+
+.theme-indigo label input[type=checkbox]:checked~.label:before,
+.theme-indigo label input[type=radio]:checked~.label:before {
+    background: #304ffe;
+}
+
+.theme-blue label input[type=checkbox]:checked~.label:before,
+.theme-blue label input[type=radio]:checked~.label:before {
+    background: #2962ff;
+}
+
+.theme-lightblue label input[type=checkbox]:checked~.label:before,
+.theme-lightblue label input[type=radio]:checked~.label:before {
+    background: #0091ea;
+}
+
+.theme-cyan label input[type=checkbox]:checked~.label:before,
+.theme-cyan label input[type=radio]:checked~.label:before {
+    background: #00b8d4;
+}
+
+.theme-teal label input[type=checkbox]:checked~.label:before,
+.theme-teal label input[type=radio]:checked~.label:before {
+    background: #00bfa5;
+}
+
+.theme-green label input[type=checkbox]:checked~.label:before,
+.theme-green label input[type=radio]:checked~.label:before {
+    background: #00c853;
+}
+
+.theme-lightgreen label input[type=checkbox]:checked~.label:before,
+.theme-lightgreen label input[type=radio]:checked~.label:before {
+    background: #64dd17;
+}
+
+.theme-lime label input[type=checkbox]:checked~.label:before,
+.theme-lime label input[type=radio]:checked~.label:before {
+    background: #aeea00;
+}
+
+.theme-yellow label input[type=checkbox]:checked~.label:before,
+.theme-yellow label input[type=radio]:checked~.label:before {
+    background: #ffd600;
+}
+
+.theme-amber label input[type=checkbox]:checked~.label:before,
+.theme-amber label input[type=radio]:checked~.label:before {
+    background: #ffab00;
+}
+
+.theme-orange label input[type=checkbox]:checked~.label:before,
+.theme-orange label input[type=radio]:checked~.label:before {
+    background: #ff6d00;
+}
+
+.theme-deeporange label input[type=checkbox]:checked~.label:before,
+.theme-deeporange label input[type=radio]:checked~.label:before {
+    background: #dd2c00;
+}
+
+.theme-red label input[type=checkbox]:checked~.label:before,
+.theme-red label input[type=radio]:checked~.label:before {
+    border-color: #d60000;
+}
+
+.theme-pink label input[type=checkbox]:checked~.label:before,
+.theme-pink label input[type=radio]:checked~.label:before {
+    border-color: #c51162;
+}
+
+.theme-purple label input[type=checkbox]:checked~.label:before,
+.theme-purple label input[type=radio]:checked~.label:before {
+    border-color: #a0f;
+}
+
+.theme-deeppurple label input[type=checkbox]:checked~.label:before,
+.theme-deeppurple label input[type=radio]:checked~.label:before {
+    border-color: #6200ea;
+}
+
+.theme-indigo label input[type=checkbox]:checked~.label:before,
+.theme-indigo label input[type=radio]:checked~.label:before {
+    border-color: #304ffe;
+}
+
+.theme-blue label input[type=checkbox]:checked~.label:before,
+.theme-blue label input[type=radio]:checked~.label:before {
+    border-color: #2962ff;
+}
+
+.theme-lightblue label input[type=checkbox]:checked~.label:before,
+.theme-lightblue label input[type=radio]:checked~.label:before {
+    border-color: #0091ea;
+}
+
+.theme-cyan label input[type=checkbox]:checked~.label:before,
+.theme-cyan label input[type=radio]:checked~.label:before {
+    border-color: #00b8d4;
+}
+
+.theme-teal label input[type=checkbox]:checked~.label:before,
+.theme-teal label input[type=radio]:checked~.label:before {
+    border-color: #00bfa5;
+}
+
+.theme-green label input[type=checkbox]:checked~.label:before,
+.theme-green label input[type=radio]:checked~.label:before {
+    border-color: #00c853;
+}
+
+.theme-lightgreen label input[type=checkbox]:checked~.label:before,
+.theme-lightgreen label input[type=radio]:checked~.label:before {
+    border-color: #64dd17;
+}
+
+.theme-lime label input[type=checkbox]:checked~.label:before,
+.theme-lime label input[type=radio]:checked~.label:before {
+    border-color: #aeea00;
+}
+
+.theme-yellow label input[type=checkbox]:checked~.label:before,
+.theme-yellow label input[type=radio]:checked~.label:before {
+    border-color: #ffd600;
+}
+
+.theme-amber label input[type=checkbox]:checked~.label:before,
+.theme-amber label input[type=radio]:checked~.label:before {
+    border-color: #ffab00;
+}
+
+.theme-orange label input[type=checkbox]:checked~.label:before,
+.theme-orange label input[type=radio]:checked~.label:before {
+    border-color: #ff6d00;
+}
+
+.theme-deeporange label input[type=checkbox]:checked~.label:before,
+.theme-deeporange label input[type=radio]:checked~.label:before {
+    border-color: #dd2c00;
+}
+
+label input[type=checkbox].tab~.label, label input[type=radio].tab~.label {
+    display: inline-block;
+    border: 1px solid transparent;
+    line-height: 1.2em;
+    padding: .5em 1em;
+    background: transparent;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    color: #607c8a;
+    border-color: #607c8a;
+    float: left;
+    margin-right: -1px;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+label input[type=checkbox].tab~.label:after,
+label input[type=checkbox].tab~.label:before,
+label input[type=radio].tab~.label:after,
+label input[type=radio].tab~.label:before {
+    display: none;
+}
+
+.theme-red label input[type=checkbox].tab~.label,
+.theme-red label input[type=radio].tab~.label {
+    color: #f44034;
+}
+
+.theme-pink label input[type=checkbox].tab~.label,
+.theme-pink label input[type=radio].tab~.label {
+    color: #e91e63;
+}
+
+.theme-purple label input[type=checkbox].tab~.label,
+.theme-purple label input[type=radio].tab~.label {
+    color: #9c27b0;
+}
+
+.theme-deeppurple label input[type=checkbox].tab~.label,
+.theme-deeppurple label input[type=radio].tab~.label {
+    color: #673ab7;
+}
+
+.theme-indigo label input[type=checkbox].tab~.label,
+.theme-indigo label input[type=radio].tab~.label {
+    color: #3f51b5;
+}
+
+.theme-blue label input[type=checkbox].tab~.label,
+.theme-blue label input[type=radio].tab~.label {
+    color: #2196f3;
+}
+
+.theme-lightblue label input[type=checkbox].tab~.label,
+.theme-lightblue label input[type=radio].tab~.label {
+    color: #03a9f4;
+}
+
+.theme-cyan label input[type=checkbox].tab~.label,
+.theme-cyan label input[type=radio].tab~.label {
+    color: #00bcd4;
+}
+
+.theme-teal label input[type=checkbox].tab~.label,
+.theme-teal label input[type=radio].tab~.label {
+    color: #009688;
+}
+
+.theme-green label input[type=checkbox].tab~.label,
+.theme-green label input[type=radio].tab~.label {
+    color: #4caf50;
+}
+
+.theme-lightgreen label input[type=checkbox].tab~.label,
+.theme-lightgreen label input[type=radio].tab~.label {
+    color: #8bc34a;
+}
+
+.theme-lime label input[type=checkbox].tab~.label,
+.theme-lime label input[type=radio].tab~.label {
+    color: #cddc39;
+}
+
+.theme-yellow label input[type=checkbox].tab~.label,
+.theme-yellow label input[type=radio].tab~.label {
+    color: #ffeb3b;
+}
+
+.theme-amber label input[type=checkbox].tab~.label,
+.theme-amber label input[type=radio].tab~.label {
+    color: #ffc107;
+}
+
+.theme-orange label input[type=checkbox].tab~.label,
+.theme-orange label input[type=radio].tab~.label {
+    color: #ff9800;
+}
+
+.theme-deeporange label input[type=checkbox].tab~.label,
+.theme-deeporange label input[type=radio].tab~.label {
+    color: #ff5722;
+}
+
+.theme-red label input[type=checkbox].tab~.label,
+.theme-red label input[type=radio].tab~.label {
+    border-color: #f44034;
+}
+
+.theme-pink label input[type=checkbox].tab~.label,
+.theme-pink label input[type=radio].tab~.label {
+    border-color: #e91e63;
+}
+
+.theme-purple label input[type=checkbox].tab~.label,
+.theme-purple label input[type=radio].tab~.label {
+    border-color: #9c27b0;
+}
+
+.theme-deeppurple label input[type=checkbox].tab~.label,
+.theme-deeppurple label input[type=radio].tab~.label {
+    border-color: #673ab7;
+}
+
+.theme-indigo label input[type=checkbox].tab~.label,
+.theme-indigo label input[type=radio].tab~.label {
+    border-color: #3f51b5;
+}
+
+.theme-blue label input[type=checkbox].tab~.label,
+.theme-blue label input[type=radio].tab~.label {
+    border-color: #2196f3;
+}
+
+.theme-lightblue label input[type=checkbox].tab~.label,
+.theme-lightblue label input[type=radio].tab~.label {
+    border-color: #03a9f4;
+}
+
+.theme-cyan label input[type=checkbox].tab~.label,
+.theme-cyan label input[type=radio].tab~.label {
+    border-color: #00bcd4;
+}
+
+.theme-teal label input[type=checkbox].tab~.label,
+.theme-teal label input[type=radio].tab~.label {
+    border-color: #009688;
+}
+
+.theme-green label input[type=checkbox].tab~.label,
+.theme-green label input[type=radio].tab~.label {
+    border-color: #4caf50;
+}
+
+.theme-lightgreen label input[type=checkbox].tab~.label,
+.theme-lightgreen label input[type=radio].tab~.label {
+    border-color: #8bc34a;
+}
+
+.theme-lime label input[type=checkbox].tab~.label,
+.theme-lime label input[type=radio].tab~.label {
+    border-color: #cddc39;
+}
+
+.theme-yellow label input[type=checkbox].tab~.label,
+.theme-yellow label input[type=radio].tab~.label {
+    border-color: #ffeb3b;
+}
+
+.theme-amber label input[type=checkbox].tab~.label,
+.theme-amber label input[type=radio].tab~.label {
+    border-color: #ffc107;
+}
+
+.theme-orange label input[type=checkbox].tab~.label,
+.theme-orange label input[type=radio].tab~.label {
+    border-color: #ff9800;
+}
+
+.theme-deeporange label input[type=checkbox].tab~.label,
+.theme-deeporange label input[type=radio].tab~.label {
+    border-color: #ff5722;
+}
+
+label input[type=checkbox].tab~.label:hover,
+label input[type=radio].tab~.label:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #607c8a;
+}
+
+.theme-red label input[type=checkbox].tab~.label:hover,
+.theme-red label input[type=radio].tab~.label:hover {
+    background-color: #f44034;
+}
+
+.theme-pink label input[type=checkbox].tab~.label:hover,
+.theme-pink label input[type=radio].tab~.label:hover {
+    background-color: #e91e63;
+}
+
+.theme-purple label input[type=checkbox].tab~.label:hover,
+.theme-purple label input[type=radio].tab~.label:hover {
+    background-color: #9c27b0;
+}
+
+.theme-deeppurple label input[type=checkbox].tab~.label:hover,
+.theme-deeppurple label input[type=radio].tab~.label:hover {
+    background-color: #673ab7;
+}
+
+.theme-indigo label input[type=checkbox].tab~.label:hover,
+.theme-indigo label input[type=radio].tab~.label:hover {
+    background-color: #3f51b5;
+}
+
+.theme-blue label input[type=checkbox].tab~.label:hover,
+.theme-blue label input[type=radio].tab~.label:hover {
+    background-color: #2196f3;
+}
+
+.theme-lightblue label input[type=checkbox].tab~.label:hover,
+.theme-lightblue label input[type=radio].tab~.label:hover {
+    background-color: #03a9f4;
+}
+
+.theme-cyan label input[type=checkbox].tab~.label:hover,
+.theme-cyan label input[type=radio].tab~.label:hover {
+    background-color: #00bcd4;
+}
+
+.theme-teal label input[type=checkbox].tab~.label:hover,
+.theme-teal label input[type=radio].tab~.label:hover {
+    background-color: #009688;
+}
+
+.theme-green label input[type=checkbox].tab~.label:hover,
+.theme-green label input[type=radio].tab~.label:hover {
+    background-color: #4caf50;
+}
+
+.theme-lightgreen label input[type=checkbox].tab~.label:hover,
+.theme-lightgreen label input[type=radio].tab~.label:hover {
+    background-color: #8bc34a;
+}
+
+.theme-lime label input[type=checkbox].tab~.label:hover,
+.theme-lime label input[type=radio].tab~.label:hover {
+    background-color: #cddc39;
+}
+
+.theme-yellow label input[type=checkbox].tab~.label:hover,
+.theme-yellow label input[type=radio].tab~.label:hover {
+    background-color: #ffeb3b;
+}
+
+.theme-amber label input[type=checkbox].tab~.label:hover,
+.theme-amber label input[type=radio].tab~.label:hover {
+    background-color: #ffc107;
+}
+
+.theme-orange label input[type=checkbox].tab~.label:hover,
+.theme-orange label input[type=radio].tab~.label:hover {
+    background-color: #ff9800;
+}
+
+.theme-deeporange label input[type=checkbox].tab~.label:hover,
+.theme-deeporange label input[type=radio].tab~.label:hover {
+    background-color: #ff5722;
+}
+
+label input[type=checkbox].tab~.label:active,
+label input[type=radio].tab~.label:active {
+    color: #fff !important;
+    background-color: #b0bec4;
+}
+
+.theme-red label input[type=checkbox].tab~.label:active,
+.theme-red label input[type=radio].tab~.label:active {
+    background-color: #ef9a9a;
+}
+
+.theme-pink label input[type=checkbox].tab~.label:active,
+.theme-pink label input[type=radio].tab~.label:active {
+    background-color: #f48fb1;
+}
+
+.theme-purple label input[type=checkbox].tab~.label:active,
+.theme-purple label input[type=radio].tab~.label:active {
+    background-color: #ce93d8;
+}
+
+.theme-deeppurple label input[type=checkbox].tab~.label:active,
+.theme-deeppurple label input[type=radio].tab~.label:active {
+    background-color: #b39ddb;
+}
+
+.theme-indigo label input[type=checkbox].tab~.label:active,
+.theme-indigo label input[type=radio].tab~.label:active {
+    background-color: #9fa8da;
+}
+
+.theme-blue label input[type=checkbox].tab~.label:active,
+.theme-blue label input[type=radio].tab~.label:active {
+    background-color: #90caf9;
+}
+
+.theme-lightblue label input[type=checkbox].tab~.label:active,
+.theme-lightblue label input[type=radio].tab~.label:active {
+    background-color: #81d4fa;
+}
+
+.theme-cyan label input[type=checkbox].tab~.label:active,
+.theme-cyan label input[type=radio].tab~.label:active {
+    background-color: #80deea;
+}
+
+.theme-teal label input[type=checkbox].tab~.label:active,
+.theme-teal label input[type=radio].tab~.label:active {
+    background-color: #80cbc4;
+}
+
+.theme-green label input[type=checkbox].tab~.label:active,
+.theme-green label input[type=radio].tab~.label:active {
+    background-color: #a5d6a7;
+}
+
+.theme-lightgreen label input[type=checkbox].tab~.label:active,
+.theme-lightgreen label input[type=radio].tab~.label:active {
+    background-color: #c5e1a5;
+}
+
+.theme-lime label input[type=checkbox].tab~.label:active,
+.theme-lime label input[type=radio].tab~.label:active {
+    background-color: #e6ee9c;
+}
+
+.theme-yellow label input[type=checkbox].tab~.label:active,
+.theme-yellow label input[type=radio].tab~.label:active {
+    background-color: #fff59d;
+}
+
+.theme-amber label input[type=checkbox].tab~.label:active,
+.theme-amber label input[type=radio].tab~.label:active {
+    background-color: #ffe082;
+}
+
+.theme-orange label input[type=checkbox].tab~.label:active,
+.theme-orange label input[type=radio].tab~.label:active {
+    background-color: #ffcc80;
+}
+
+.theme-deeporange label input[type=checkbox].tab~.label:active,
+.theme-deeporange label input[type=radio].tab~.label:active {
+    background-color: #ffab91;
+}
+
+.mod-color-deep label input[type=checkbox].tab~.label,
+.mod-color-deep label input[type=radio].tab~.label,
+label input[type=checkbox].tab~.label.mod-color-deep,
+label input[type=radio].tab~.label.mod-color-deep {
+    color: #fff !important;
+    border-color: #edf0f2;
+}
+
+.theme-red .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-red .mod-color-deep label input[type=radio].tab~.label,
+.theme-red label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-red label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #ffebee;
+}
+
+.theme-pink .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-pink .mod-color-deep label input[type=radio].tab~.label,
+.theme-pink label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-pink label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #fce4eb;
+}
+
+.theme-purple .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-purple .mod-color-deep label input[type=radio].tab~.label,
+.theme-purple label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-purple label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #f3e5f5;
+}
+
+.theme-deeppurple .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-deeppurple .mod-color-deep label input[type=radio].tab~.label,
+.theme-deeppurple label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-deeppurple label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #ede7f6;
+}
+
+.theme-indigo .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-indigo .mod-color-deep label input[type=radio].tab~.label,
+.theme-indigo label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-indigo label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e8eaf6;
+}
+
+.theme-blue .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-blue .mod-color-deep label input[type=radio].tab~.label,
+.theme-blue label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-blue label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e3f2fd;
+}
+
+.theme-lightblue .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-lightblue .mod-color-deep label input[type=radio].tab~.label,
+.theme-lightblue label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-lightblue label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e1f5fe;
+}
+
+.theme-cyan .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-cyan .mod-color-deep label input[type=radio].tab~.label,
+.theme-cyan label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-cyan label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e0f7fa;
+}
+
+.theme-teal .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-teal .mod-color-deep label input[type=radio].tab~.label,
+.theme-teal label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-teal label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e0f2f1;
+}
+
+.theme-green .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-green .mod-color-deep label input[type=radio].tab~.label,
+.theme-green label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-green label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #e8f5e9;
+}
+
+.theme-lightgreen .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-lightgreen .mod-color-deep label input[type=radio].tab~.label,
+.theme-lightgreen label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-lightgreen label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #f1f8e9;
+}
+
+.theme-lime .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-lime .mod-color-deep label input[type=radio].tab~.label,
+.theme-lime label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-lime label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #f9fbe7;
+}
+
+.theme-yellow .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-yellow .mod-color-deep label input[type=radio].tab~.label,
+.theme-yellow label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-yellow label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #fffde7;
+}
+
+.theme-amber .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-amber .mod-color-deep label input[type=radio].tab~.label,
+.theme-amber label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-amber label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #fff8e1;
+}
+
+.theme-orange .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-orange .mod-color-deep label input[type=radio].tab~.label,
+.theme-orange label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-orange label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #fff3e0;
+}
+
+.theme-deeporange .mod-color-deep label input[type=checkbox].tab~.label,
+.theme-deeporange .mod-color-deep label input[type=radio].tab~.label,
+.theme-deeporange label input[type=checkbox].tab~.label.mod-color-deep,
+.theme-deeporange label input[type=radio].tab~.label.mod-color-deep {
+    border-color: #fbe9e7;
+}
+
+.mod-color-deep label input[type=checkbox].tab~.label:hover,
+.mod-color-deep label input[type=radio].tab~.label:hover,
+label input[type=checkbox].tab~.label.mod-color-deep:hover,
+label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #edf0f2;
+    color: #253137 !important;
+    text-shadow: none;
+}
+
+.theme-red .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-red .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-red label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-red label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #ffebee;
+}
+
+.theme-pink .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-pink .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-pink label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-pink label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #fce4eb;
+}
+
+.theme-purple .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-purple .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-purple label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-purple label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #f3e5f5;
+}
+
+.theme-deeppurple .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-deeppurple .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-deeppurple label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-deeppurple label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #ede7f6;
+}
+
+.theme-indigo .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-indigo .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-indigo label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-indigo label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e8eaf6;
+}
+
+.theme-blue .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-blue .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-blue label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-blue label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e3f2fd;
+}
+
+.theme-lightblue .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lightblue .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lightblue label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lightblue label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e1f5fe;
+}
+
+.theme-cyan .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-cyan .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-cyan label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-cyan label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e0f7fa;
+}
+
+.theme-teal .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-teal .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-teal label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-teal label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e0f2f1;
+}
+
+.theme-green .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-green .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-green label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-green label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #e8f5e9;
+}
+
+.theme-lightgreen .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lightgreen .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lightgreen label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lightgreen label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #f1f8e9;
+}
+
+.theme-lime .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lime .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lime label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lime label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #f9fbe7;
+}
+
+.theme-yellow .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-yellow .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-yellow label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-yellow label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #fffde7;
+}
+
+.theme-amber .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-amber .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-amber label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-amber label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #fff8e1;
+}
+
+.theme-orange .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-orange .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-orange label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-orange label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #fff3e0;
+}
+
+.theme-deeporange .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-deeporange .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-deeporange label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-deeporange label input[type=radio].tab~.label.mod-color-deep:hover {
+    background: #fbe9e7;
+}
+
+.theme-red .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-red .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-red label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-red label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #b51c1c !important;
+}
+
+.theme-pink .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-pink .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-pink label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-pink label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #880e4f !important;
+}
+
+.theme-purple .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-purple .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-purple label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-purple label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #4a148c !important;
+}
+
+.theme-deeppurple .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-deeppurple .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-deeppurple label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-deeppurple label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #311b92 !important;
+}
+
+.theme-indigo .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-indigo .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-indigo label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-indigo label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #1a237e !important;
+}
+
+.theme-blue .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-blue .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-blue label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-blue label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #0d47a1 !important;
+}
+
+.theme-lightblue .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lightblue .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lightblue label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lightblue label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #01579b !important;
+}
+
+.theme-cyan .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-cyan .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-cyan label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-cyan label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #006064 !important;
+}
+
+.theme-teal .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-teal .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-teal label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-teal label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #004d40 !important;
+}
+
+.theme-green .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-green .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-green label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-green label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #1b5e20 !important;
+}
+
+.theme-lightgreen .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lightgreen .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lightgreen label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lightgreen label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #33691e !important;
+}
+
+.theme-lime .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-lime .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-lime label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-lime label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #827717 !important;
+}
+
+.theme-yellow .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-yellow .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-yellow label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-yellow label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #f57f17 !important;
+}
+
+.theme-amber .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-amber .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-amber label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-amber label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #ff6f00 !important;
+}
+
+.theme-orange .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-orange .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-orange label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-orange label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #e65100 !important;
+}
+
+.theme-deeporange .mod-color-deep label input[type=checkbox].tab~.label:hover,
+.theme-deeporange .mod-color-deep label input[type=radio].tab~.label:hover,
+.theme-deeporange label input[type=checkbox].tab~.label.mod-color-deep:hover,
+.theme-deeporange label input[type=radio].tab~.label.mod-color-deep:hover {
+    color: #bf360c !important;
+}
+
+.mod-color-deep label input[type=checkbox].tab~.label:active,
+.mod-color-deep label input[type=radio].tab~.label:active,
+label input[type=checkbox].tab~.label.mod-color-deep:active,
+label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #b0bec4;
+    color: #253137 !important;
+    text-shadow: none;
+}
+
+.theme-red .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-red .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-red label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-red label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #ef9a9a;
+}
+
+.theme-pink .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-pink .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-pink label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-pink label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #f48fb1;
+}
+
+.theme-purple .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-purple .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-purple label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-purple label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #ce93d8;
+}
+
+.theme-deeppurple .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-deeppurple .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-deeppurple label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-deeppurple label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #b39ddb;
+}
+
+.theme-indigo .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-indigo .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-indigo label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-indigo label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #9fa8da;
+}
+
+.theme-blue .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-blue .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-blue label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-blue label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #90caf9;
+}
+
+.theme-lightblue .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lightblue .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lightblue label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lightblue label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #81d4fa;
+}
+
+.theme-cyan .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-cyan .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-cyan label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-cyan label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #80deea;
+}
+
+.theme-teal .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-teal .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-teal label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-teal label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #80cbc4;
+}
+
+.theme-green .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-green .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-green label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-green label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #a5d6a7;
+}
+
+.theme-lightgreen .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lightgreen .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lightgreen label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lightgreen label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #c5e1a5;
+}
+
+.theme-lime .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lime .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lime label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lime label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #e6ee9c;
+}
+
+.theme-yellow .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-yellow .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-yellow label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-yellow label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #fff59d;
+}
+
+.theme-amber .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-amber .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-amber label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-amber label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #ffe082;
+}
+
+.theme-orange .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-orange .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-orange label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-orange label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #ffcc80;
+}
+
+.theme-deeporange .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-deeporange .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-deeporange label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-deeporange label input[type=radio].tab~.label.mod-color-deep:active {
+    background: #ffab91;
+}
+
+.theme-red .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-red .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-red label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-red label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #b51c1c !important;
+}
+
+.theme-pink .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-pink .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-pink label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-pink label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #880e4f !important;
+}
+
+.theme-purple .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-purple .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-purple label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-purple label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #4a148c !important;
+}
+
+.theme-deeppurple .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-deeppurple .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-deeppurple label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-deeppurple label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #311b92 !important;
+}
+
+.theme-indigo .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-indigo .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-indigo label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-indigo label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #1a237e !important;
+}
+
+.theme-blue .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-blue .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-blue label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-blue label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #0d47a1 !important;
+}
+
+.theme-lightblue .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lightblue .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lightblue label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lightblue label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #01579b !important;
+}
+
+.theme-cyan .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-cyan .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-cyan label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-cyan label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #006064 !important;
+}
+
+.theme-teal .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-teal .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-teal label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-teal label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #004d40 !important;
+}
+
+.theme-green .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-green .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-green label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-green label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #1b5e20 !important;
+}
+
+.theme-lightgreen .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lightgreen .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lightgreen label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lightgreen label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #33691e !important;
+}
+
+.theme-lime .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-lime .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-lime label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-lime label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #827717 !important;
+}
+
+.theme-yellow .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-yellow .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-yellow label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-yellow label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #f57f17 !important;
+}
+
+.theme-amber .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-amber .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-amber label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-amber label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #ff6f00 !important;
+}
+
+.theme-orange .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-orange .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-orange label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-orange label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #e65100 !important;
+}
+
+.theme-deeporange .mod-color-deep label input[type=checkbox].tab~.label:active,
+.theme-deeporange .mod-color-deep label input[type=radio].tab~.label:active,
+.theme-deeporange label input[type=checkbox].tab~.label.mod-color-deep:active,
+.theme-deeporange label input[type=radio].tab~.label.mod-color-deep:active {
+    color: #bf360c !important;
+}
+
+label input[type=checkbox].tab:checked~.label,
+label input[type=radio].tab:checked~.label {
+    background-color: #b0bec4;
+}
+
+.theme-red label input[type=checkbox].tab:checked~.label,
+.theme-red label input[type=radio].tab:checked~.label {
+    background-color: #ef9a9a;
+}
+
+.theme-pink label input[type=checkbox].tab:checked~.label,
+.theme-pink label input[type=radio].tab:checked~.label {
+    background-color: #f48fb1;
+}
+
+.theme-purple label input[type=checkbox].tab:checked~.label,
+.theme-purple label input[type=radio].tab:checked~.label {
+    background-color: #ce93d8;
+}
+
+.theme-deeppurple label input[type=checkbox].tab:checked~.label,
+.theme-deeppurple label input[type=radio].tab:checked~.label {
+    background-color: #b39ddb;
+}
+
+.theme-indigo label input[type=checkbox].tab:checked~.label,
+.theme-indigo label input[type=radio].tab:checked~.label {
+    background-color: #9fa8da;
+}
+
+.theme-blue label input[type=checkbox].tab:checked~.label,
+.theme-blue label input[type=radio].tab:checked~.label {
+    background-color: #90caf9;
+}
+
+.theme-lightblue label input[type=checkbox].tab:checked~.label,
+.theme-lightblue label input[type=radio].tab:checked~.label {
+    background-color: #81d4fa;
+}
+
+.theme-cyan label input[type=checkbox].tab:checked~.label,
+.theme-cyan label input[type=radio].tab:checked~.label {
+    background-color: #80deea;
+}
+
+.theme-teal label input[type=checkbox].tab:checked~.label,
+.theme-teal label input[type=radio].tab:checked~.label {
+    background-color: #80cbc4;
+}
+
+.theme-green label input[type=checkbox].tab:checked~.label,
+.theme-green label input[type=radio].tab:checked~.label {
+    background-color: #a5d6a7;
+}
+
+.theme-lightgreen label input[type=checkbox].tab:checked~.label,
+.theme-lightgreen label input[type=radio].tab:checked~.label {
+    background-color: #c5e1a5;
+}
+
+.theme-lime label input[type=checkbox].tab:checked~.label,
+.theme-lime label input[type=radio].tab:checked~.label {
+    background-color: #e6ee9c;
+}
+
+.theme-yellow label input[type=checkbox].tab:checked~.label,
+.theme-yellow label input[type=radio].tab:checked~.label {
+    background-color: #fff59d;
+}
+
+.theme-amber label input[type=checkbox].tab:checked~.label,
+.theme-amber label input[type=radio].tab:checked~.label {
+    background-color: #ffe082;
+}
+
+.theme-orange label input[type=checkbox].tab:checked~.label,
+.theme-orange label input[type=radio].tab:checked~.label {
+    background-color: #ffcc80;
+}
+
+.theme-deeporange label input[type=checkbox].tab:checked~.label,
+.theme-deeporange label input[type=radio].tab:checked~.label {
+    background-color: #ffab91;
+}
+
+label input[type=checkbox].switch~.label, label input[type=radio].switch~.label {
+    padding-left: 2.5em;
+}
+
+label input[type=checkbox].switch~.label:before,
+label input[type=radio].switch~.label:before {
+    height: 1.25em;
+    width: 1.25em;
+    top: 50%;
+    left: 0;
+    margin-top: -.625em;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+    -webkit-transition: background-color .15s ease-out,
+                        border-color .15s ease-out,
+                        -webkit-transform .15s ease-out;
+            transition: background-color .15s ease-out,
+                border-color .15s ease-out,
+                -webkit-transform .15s ease-out;
+            transition: background-color .15s ease-out,
+                border-color .15s ease-out,
+                transform .15s ease-out;
+            transition: background-color .15s ease-out,
+                border-color .15s ease-out,
+                transform .15s ease-out,
+                -webkit-transform .15s ease-out;
+}
+
+label input[type=checkbox].switch~.label:after,
+label input[type=radio].switch~.label:after {
+    width: 2em;
+    top: 50%;
+    left: 0;
+    height: .75em;
+    margin-top: -.375em;
+    -webkit-border-radius: .375em;
+            border-radius: .375em;
+    background: #e0e0e0;
+    border: 0;
+}
+
+label input[type=checkbox].switch:checked~.label:before,
+label input[type=radio].switch:checked~.label:before {
+    content: "";
+    -webkit-transform: translateX(66.6666%);
+        -ms-transform: translateX(66.6666%);
+            transform: translateX(66.6666%);
+}
+
+label input[type=checkbox].switch:focus~.label:before,
+label input[type=radio].switch:focus~.label:before {
+    -webkit-animation: label-focus-shadow .15s linear;
+            animation: label-focus-shadow .15s linear;
+}
+
+label input[type=checkbox].switch:focus~.label:after,
+label input[type=radio].switch:focus~.label:after {
+    -webkit-animation: none;
+            animation: none;
+}
+
+label:first-of-type input[type=checkbox].tab~.label,
+label:first-of-type input[type=radio].tab~.label {
+    -webkit-border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+}
+
+label:last-of-type input[type=checkbox].tab~.label,
+label:last-of-type input[type=radio].tab~.label {
+    -webkit-border-top-right-radius: 3px;
+            border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+}
+
+label input[type=radio]~.label:before {
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+}
+
+label input[type=radio]:checked~.label:before {
+    -webkit-box-shadow: inset 0 0 0 3px #fff;
+            box-shadow: inset 0 0 0 3px #fff;
+}
+
+label input[type=checkbox]~.label:before {
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+}
+
+label input[type=checkbox]:checked~.label:before {
+    content: "\2713";
+    color: #fafafa;
+    border-width: 1px;
+}
+
+label input[type=checkbox]:checked~.label:hover:before {
+    background: #455a63;
+}
+
+.theme-red label input[type=checkbox]:checked~.label:hover:before {
+    background: #d33131;
+}
+
+.theme-pink label input[type=checkbox]:checked~.label:hover:before {
+    background: #c2185b;
+}
+
+.theme-purple label input[type=checkbox]:checked~.label:hover:before {
+    background: #7b1fa2;
+}
+
+.theme-deeppurple label input[type=checkbox]:checked~.label:hover:before {
+    background: #512da8;
+}
+
+.theme-indigo label input[type=checkbox]:checked~.label:hover:before {
+    background: #303f9f;
+}
+
+.theme-blue label input[type=checkbox]:checked~.label:hover:before {
+    background: #1976d2;
+}
+
+.theme-lightblue label input[type=checkbox]:checked~.label:hover:before {
+    background: #0288d1;
+}
+
+.theme-cyan label input[type=checkbox]:checked~.label:hover:before {
+    background: #0097a7;
+}
+
+.theme-teal label input[type=checkbox]:checked~.label:hover:before {
+    background: #00796b;
+}
+
+.theme-green label input[type=checkbox]:checked~.label:hover:before {
+    background: #388e3c;
+}
+
+.theme-lightgreen label input[type=checkbox]:checked~.label:hover:before {
+    background: #689f38;
+}
+
+.theme-lime label input[type=checkbox]:checked~.label:hover:before {
+    background: #afb42b;
+}
+
+.theme-yellow label input[type=checkbox]:checked~.label:hover:before {
+    background: #fbc02d;
+}
+
+.theme-amber label input[type=checkbox]:checked~.label:hover:before {
+    background: #ffa000;
+}
+
+.theme-orange label input[type=checkbox]:checked~.label:hover:before {
+    background: #f57c00;
+}
+
+.theme-deeporange label input[type=checkbox]:checked~.label:hover:before {
+    background: #e64a19;
+}
+
+label input[type=checkbox]:checked~.label:active:before {
+    background: #253137;
+}
+
+.theme-red label input[type=checkbox]:checked~.label:active:before {
+    background: #b51c1c;
+}
+
+.theme-pink label input[type=checkbox]:checked~.label:active:before {
+    background: #880e4f;
+}
+
+.theme-purple label input[type=checkbox]:checked~.label:active:before {
+    background: #4a148c;
+}
+
+.theme-deeppurple label input[type=checkbox]:checked~.label:active:before {
+    background: #311b92;
+}
+
+.theme-indigo label input[type=checkbox]:checked~.label:active:before {
+    background: #1a237e;
+}
+
+.theme-blue label input[type=checkbox]:checked~.label:active:before {
+    background: #0d47a1;
+}
+
+.theme-lightblue label input[type=checkbox]:checked~.label:active:before {
+    background: #01579b;
+}
+
+.theme-cyan label input[type=checkbox]:checked~.label:active:before {
+    background: #006064;
+}
+
+.theme-teal label input[type=checkbox]:checked~.label:active:before {
+    background: #004d40;
+}
+
+.theme-green label input[type=checkbox]:checked~.label:active:before {
+    background: #1b5e20;
+}
+
+.theme-lightgreen label input[type=checkbox]:checked~.label:active:before {
+    background: #33691e;
+}
+
+.theme-lime label input[type=checkbox]:checked~.label:active:before {
+    background: #827717;
+}
+
+.theme-yellow label input[type=checkbox]:checked~.label:active:before {
+    background: #f57f17;
+}
+
+.theme-amber label input[type=checkbox]:checked~.label:active:before {
+    background: #ff6f00;
+}
+
+.theme-orange label input[type=checkbox]:checked~.label:active:before {
+    background: #e65100;
+}
+
+.theme-deeporange label input[type=checkbox]:checked~.label:active:before {
+    background: #bf360c;
+}
+
+@-webkit-keyframes label-focus {
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        background: transparent;
+    }
+
+    75% {
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+        background-color: hsla(0, 0%, 62%, .333333);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        background-color: hsla(0, 0%, 62%, .166666);
+    }
+}
+
+@keyframes label-focus {
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        background: transparent;
+    }
+
+    75% {
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+        background-color: hsla(0, 0%, 62%, .333333);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        background-color: hsla(0, 0%, 62%, .166666);
+    }
+}
+
+@-webkit-keyframes label-focus-shadow {
+    0% {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    75% {
+        -webkit-box-shadow: 0 0 0 15px hsla(0, 0%, 62%, .166666);
+                box-shadow: 0 0 0 15px hsla(0, 0%, 62%, .166666);
+    }
+
+    to {
+        -webkit-box-shadow: 0 0 0 5px hsla(0, 0%, 62%, .166666);
+                box-shadow: 0 0 0 5px hsla(0, 0%, 62%, .166666);
+    }
+}
+
+@keyframes label-focus-shadow {
+    0% {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    75% {
+        -webkit-box-shadow: 0 0 0 15px hsla(0, 0%, 62%, .166666);
+                box-shadow: 0 0 0 15px hsla(0, 0%, 62%, .166666);
+    }
+
+    to {
+        -webkit-box-shadow: 0 0 0 5px hsla(0, 0%, 62%, .166666);
+                box-shadow: 0 0 0 5px hsla(0, 0%, 62%, .166666);
+    }
+}
+
 .form-item {
     clear: both;
 }
@@ -525,6 +2151,7 @@ form .form-items .form-item {
 form .form-actions {
     padding-left: .65em;
     padding-right: .65em;
+    margin: 1em auto;
 }
 
 form .taglist {
@@ -593,6 +2220,15 @@ form .taglist input {
     width: 10em;
     max-width: 100%;
     margin-bottom: 8px;
+}
+
+form .form-loading {
+    text-align: center;
+    height: 7em;
+}
+
+form .form-loading .loader-circle {
+    margin-top: 2em;
 }
 
 .trumbowyg-loading {
@@ -1200,14 +2836,6 @@ label[for] {
     margin-left: .75em;
 }
 
-p:last-child {
-    margin-bottom: 0;
-}
-
-p:first-child {
-    margin-top: 0;
-}
-
 .texts img[align] {
     width: 25%;
 }
@@ -1246,8 +2874,15 @@ h1, h2, h3, h4, h5, h6 {
                  sans-serif;
     font-weight: 600;
     position: relative;
+    margin-top: 1.5em;
     margin-bottom: 1em;
     color: #253137;
+    cursor: default;
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child,
+h6:last-child {
+    margin-bottom: 0;
 }
 
 .theme-red h1, .theme-red h2, .theme-red h3, .theme-red h4, .theme-red h5,
@@ -1330,21 +2965,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #bf360c;
 }
 
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child,
-h6:first-child {
-    margin-top: 0;
-}
-
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     opacity: .75;
     padding-left: .75em;
     font-weight: 100;
-}
-
-h1~h2, h1~h3, h1~h4, h1~h5, h1~h6, h2~h2, h2~h3, h2~h4, h2~h5, h2~h6, h3~h2,
-h3~h3, h3~h4, h3~h5, h3~h6, h4~h2, h4~h3, h4~h4, h4~h5, h4~h6, h5~h2, h5~h3,
-h5~h4, h5~h5, h5~h6, h6~h2, h6~h3, h6~h4, h6~h5, h6~h6 {
-    margin-top: 2em;
 }
 
 h1 .sideline, h2 .sideline, h3 .sideline, h4 .sideline, h5 .sideline,
@@ -1404,6 +3028,18 @@ html {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+}
+
+@media all and (max-width:1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width:960px) {
+    html {
+        font-size: 14px;
+    }
 }
 
 body.mod-overlay-on {
@@ -6556,7 +8192,8 @@ button[type=button]:focus {
     background-color: #ff5722;
 }
 
-.button:active {
+.button:active, label input[type=checkbox].tab:checked~.label,
+label input[type=radio].tab:checked~.label {
     color: #fff !important;
     background-color: #b0bec4;
 }
@@ -7788,21 +9425,27 @@ button[type=button]:focus {
 }
 
 .card {
+    clear: both;
     background: #fff;
     border: 1px solid #d9d9d9;
-    -webkit-border-radius: 5px;
-            border-radius: 5px;
-    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .125);
-            box-shadow: 0 2px 2px rgba(0, 0, 0, .125);
-    padding: .75em 16px;
-    margin-bottom: 1.5em;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
     overflow: hidden;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .05), 0 3px 5px -3px rgba(0, 0, 0, .125);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .05), 0 3px 5px -3px rgba(0, 0, 0, .125);
+    margin: 0 auto 1.5em;
+    display: block;
+    padding: 1em 16px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
 }
 
 .card>h2:first-child, .card>h3:first-child, .card>h4:first-child,
 .card>h5:first-child, .card>h6:first-child {
     border-bottom: 1px solid #d9d9d9;
-    margin: 0 -16px 1em;
+    margin: 0 -16px 16px;
     padding: 0 16px .75em;
 }
 
@@ -7818,16 +9461,21 @@ button[type=button]:focus {
     margin-top: 0;
 }
 
-.card .card-title {
+.card>dd {
+    margin: 0;
+    padding: 0;
+}
+
+.card-title, .card>dt {
     height: 125px;
     border-bottom: 1px solid #d9d9d9;
-    margin: -.75em -16px 1em;
+    margin: -1em -16px 16px;
     position: relative;
     overflow: hidden;
 }
 
-.card .card-title h2, .card .card-title h3, .card .card-title h4,
-.card .card-title h5, .card .card-title h6 {
+.card-title h2, .card-title h3, .card-title h4, .card-title h5, .card-title h6,
+.card>dt h2, .card>dt h3, .card>dt h4, .card>dt h5, .card>dt h6 {
     position: absolute;
     z-index: 3;
     left: 16px;
@@ -7836,7 +9484,7 @@ button[type=button]:focus {
     color: #fff;
 }
 
-.card .card-title img {
+.card-title img, .card>dt img {
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -7851,7 +9499,7 @@ button[type=button]:focus {
     object-position: 50% 38.2%;
 }
 
-.card .card-title:before {
+.card-title:before, .card>dt:before {
     content: "";
     background: rgba(0, 0, 0, .25);
     position: absolute;
@@ -7860,12 +9508,13 @@ button[type=button]:focus {
     right: 0;
     bottom: 0;
     left: 0;
+    pointer-events: none;
 }
 
-.card .card-actions {
+.card-actions {
     border-top: 1px solid #d9d9d9;
-    margin: 1.5em -16px -.75em;
-    padding: .5em 16px;
+    margin: 1.5em -16px -1em;
+    padding: .75em 16px;
     background: #fafafa;
 }
 
@@ -9172,6 +10821,10 @@ a.link-itme:active .link-itme-number {
 
 .list-tweet .quote .user+p {
     margin-top: .5em;
+}
+
+.list-tweet p.title+.quote {
+    margin-top: -1em;
 }
 
 .list-tweet .actions {

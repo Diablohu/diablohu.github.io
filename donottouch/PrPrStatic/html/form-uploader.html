@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>发布帖子 - 圈子 - PrPr</title>
+    <title>资源上传 - PrPr</title>
     <base target="_self">
     <meta name="Robots" content="all">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -75,68 +75,17 @@
     <div id="header" class="mod-title">
         <div class="header-title">
             <div class="layout-wrapper">
-                <h1>发表新话题</h1>
+                <h1>资源上传</h1>
             </div>
         </div>
     </div> <!-- #header -->
 
-    <div id="main" class="page-circle">
-        <div class="layout-wrapper">
-            
-            <!-- 表单: 发布帖子 -->
-            <form class="form--newpost">
-                <!-- 此处为用户不可见的表单元素，包括: 回复到主帖ID、回复到回复ID、来自于圈子ID、当前编辑的帖子ID、当前编辑的回复ID-->
-                <input type="hidden" name="tid" />
-                <input type="hidden" name="circle_id" />
-                
-                <!-- 错误信息，出错时输出 -->
-                <dl class="form-error">错误信息</dl>
-                <!-- 错误信息 - 结束 -->
-                
-                <div class="form-items">
-                    <label class="form-item">
-                        <dt>标题</dt>
-                        <dd>
-                            <input type="text" name="subject" required />
-                        </dd>
-                    </label>
-                    <label class="form-item">
-                        <dt>标签</dt>
-                        <dd>
-                            <div class="taglist">
-                                <span class="tag is-editable" tag-id="1">测试TAG #1<s>×</s></span>
-                                <span class="tag" tag-id="2">测试TAG #2 (不可编辑版)<s>×</s></span>
-                                <input type="text" autocomplete="off" prpr-autocomplete="tag" />
-                                <input name="tags" type="hidden" />
-                            </div>
-                        </dd>
-                    </label>
-                    <div class="form-item">
-                        <dt>内容</dt>
-                        <dd>
-                            <textarea class="message" name="textarea1" required trumbowyg></textarea>
-                        </dd>
-                    </div>
-                    <div class="form-item">
-                        <dt>测试 - 第二个编辑器</dt>
-                        <dd>
-                            <textarea class="message" required trumbowyg></textarea>
-                        </dd>
-                    </div>
-                </div>
-                <dl class="form-actions">
-                    <input type="submit" class="button button-primary button-large" value="提交" />
-                    
-                    <!-- 如果可以获取到来源地址，输出 A 标签，href 为 URL -->
-                    <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
-                    <!-- 否则，输出 BUTTON 标签 -->
-                    <button type="button" class="link link-cancel" button="cancel">取消</button>
-                    
-                </dl>
-            </form>
-            <!-- 表单: 发布帖子 - 结束 -->
-            
-        </div>
+    <div id="main" class="page-uploader">
+
+<div class="layout-wrapper">
+    <form class="form--uploader"></form>
+</div>
+
     </div> <!-- #main -->
 
     <div id="footer">
@@ -146,8 +95,6 @@
     </div> <!-- #footer -->
 
 </div> <!-- #layout -->
-
-<link rel="stylesheet" type="text/css" href="../dist/v2/css/page-circle.css">
 
 </body>
 

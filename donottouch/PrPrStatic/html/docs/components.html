@@ -88,9 +88,8 @@
                         <a href="frame.html">全局框架</a>
                         <a href="components.html" class="on">基础组件</a>
                         <a href="list.html">内容列表</a>
-                        <a href="less.html">LESS</a>
-                        <a href="javascript.html">JS</a>
-                        <a href="newcomponent.html">开发新组件</a>
+                        <a href="form.html">表单</a>
+                        <a href="dev.html">开发指南</a>
                     </div>
                 </div>
                 <button type="button" class="header-subcribe" button="subcribe">订阅</button>
@@ -952,84 +951,6 @@
 
                     <h2><span class="sideline">随页面动态滚动的元素</span></h2>
                     <p>添加样式 <code>.sticky</code> 即可，效果类似于本页右侧的目录。</p>
-                    
-                    <p>&nbsp;</p>
-
-                    <h2><span class="sideline">表单</span></h2>
-                    <div class="doc-sample">
-                        <form action="" method="GET" form="circleadmin">
-                            <dl class="form-error">错误信息</dl>                            
-                            <div class="form-items">
-                                <label class="form-item">
-                                    <dt>标准</dt>
-                                    <dd>
-                                        <input type="text" name="" placeholder="默认提示文本" required />
-                                    </dd>
-                                </label>
-                                <label class="form-item">
-                                    <dt>不可编辑型</dt>
-                                    <dd>
-                                        <input type="text" name="" value="该文本框不可编辑" required readonly />
-                                    </dd>
-                                </label>
-                                <label class="form-item">
-                                    <dt>编辑标签</dt>
-                                    <dd>
-                                        <div class="taglist">
-                                            <span class="tag is-editable" tag-id="1">测试TAG #1<s>×</s></span>
-                                            <span class="tag" tag-id="2">测试TAG #2 (不可编辑版)<s>×</s></span>
-                                            <input type="text" autocomplete="off" prpr-autocomplete="tag" prpr-autocomplete-api="../json-sample/autocomplete-tag.json" />
-                                            <input name="tags" type="hidden" />
-                                        </div>
-                                    </dd>
-                                </label>
-                                <label class="form-item">
-                                    <dt>上传文件</dt>
-                                    <dd>
-                                        <input type="file" name="" required></input>
-                                    </dd>
-                                </label>
-                                <label class="form-item">
-                                    <dt>长文本框</dt>
-                                    <dd>
-                                        <textarea name="" required></textarea>
-                                    </dd>
-                                </label>
-                                <div class="form-item">
-                                    <dt>编辑器</dt>
-                                    <dd>
-                                        <textarea class="message" required trumbowyg>
-                                            <p>为 <em>TEXTAREA</em> 添加 <em>trumbowyg</em> 属性即可</p>
-                                        </textarea>
-                                    </dd>
-                                </div>
-                                <dl class="form-item">
-                                    <dt>单选项</dt>
-                                    <dd>
-                                        <label>
-                                            <input type="radio" name="threadlevel" value="1" />
-                                            只接收包括本圈子所有标签的帖子
-                                        </label>
-                                        <br/>
-                                        <label>
-                                            <input type="radio" name="threadlevel" value="2" checked />
-                                            接收带本圈子任意标签的帖子
-                                        </label>
-                                        <br/>
-                                        <label>
-                                            <input type="radio" name="threadlevel" value="3" />
-                                            不接收外来投稿
-                                        </label>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <dl class="form-actions">
-                                <input type="submit" class="button button-primary button-large" value="提交" />
-                                <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
-                                <button type="button" class="link link-cancel" button="cancel">取消</button>
-                            </dl>
-                        </form>
-                    </div>
                     
                     <p>&nbsp;</p>
 

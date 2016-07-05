@@ -63,15 +63,15 @@ $document.ready(function () {
             });
         }
     });
+});
 
-    $('.doc-sample').each(function (index, el) {
-        var $el = $(el),
-            siblings = $el.children();
-        if (!siblings.length || siblings.length == 1 && siblings[0].tagName == 'FIGURE') {
-            $el.addClass('mod-only-code');
-            return;
-        }
-        var html = trimmedHtml(el).trim();
-        $el.append($('<figure/>').append($('<pre/>').append($('<code/>').text(html))));
-    });
+$('.doc-sample').each(function (index, el) {
+    var $el = $(el),
+        siblings = $el.children();
+    if (!siblings.length || siblings.length == 1 && siblings[0].tagName == 'FIGURE') {
+        $el.addClass('mod-only-code');
+        return;
+    }
+    var html = trimmedHtml(el).trim();
+    $el.append($('<figure/>').append($('<pre/>').append($('<code/>').text(html))));
 });

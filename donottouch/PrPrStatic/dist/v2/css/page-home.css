@@ -1012,12 +1012,16 @@
     -webkit-background-size: 100% 200%;
             background-size: 100% 200%;
     border: 1px solid #b0bec4;
-    -webkit-animation: 5s linear;
-            animation: 5s linear;
     -webkit-transition: -webkit-transform .2s ease-out;
             transition: -webkit-transform .2s ease-out;
             transition: transform .2s ease-out;
             transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-animation: 5s linear;
+            animation: 5s linear;
+    -webkit-transition: -webkit-transform .15s ease-out;
+            transition: -webkit-transform .15s ease-out;
+            transition: transform .15s ease-out;
+            transition: transform .15s ease-out, -webkit-transform .15s ease-out;
 }
 
 .page-home-section[section=hot] .controls label:hover:before {

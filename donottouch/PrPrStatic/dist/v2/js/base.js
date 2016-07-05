@@ -7,6 +7,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var API = {
+    'common': {
+        'js': '/dist/v2/js',
+        'css': '/dist/v2/css'
+    },
+
     'tweet': 'json-sample/tweets.json',
     'thread': 'json-sample/circle-thread-list.json',
     'pics': 'json-sample/img-list.json',
@@ -34,6 +39,9 @@ API.trumbowyg.plugins = API.trumbowyg.path + '/plugins/';
 API.trumbowyg.plugin = {
     'upload': API.trumbowyg.plugins + '/upload/trumbowyg.upload.min.js'
 };
+
+API.dropzone = '/dist/dropzone';
+API.upload = 'http://g.pracg.com/index.php?c=upload&a=image';
 
 var $document = $(document),
     $html,
@@ -64,6 +72,17 @@ var $document = $(document),
     tid,
     pid,
     threadEditable,
+    flagMap = {
+    'uid': 'uid',
+    'item_type': 'itemType',
+    'item_id': 'itemId',
+    'item_is_followed': 'itemFollowed',
+    'circle_id': 'circleId',
+    'circle_is_followed': 'circleFollowed',
+    'tid': 'tid',
+    'pid': 'pid',
+    'thread_editable': 'threadEditable'
+},
     isIframe = top != window,
     pageUrl = location.href;
 
@@ -731,6 +750,80 @@ Autoload.templateFilter.thread = function (html, data) {
 Autoload.templateFilter.pics = function (html, data) {
     return html;
 };
+
+var LOD = function () {
+    function LOD(settings) {
+        _classCallCheck(this, LOD);
+
+        if (!settings.name) return;
+
+        this._ = $.extend({}, LOD.defaults, settings);
+
+        if (!LOD.ready[this._.name]) {
+            LOD.ready[this._.name] = {};
+            for (var i in this._.resources) {
+                LOD.ready[this._.name][i] = !1;
+            }
+        }
+
+        this.readyState = LOD.ready[this._.name];
+        this.readyCheck();
+
+        return this;
+    }
+
+    _createClass(LOD, [{
+        key: 'ready',
+        value: function ready() {
+            this._.ready();
+        }
+    }, {
+        key: 'readyCheck',
+        value: function readyCheck() {
+            var r = !0;
+
+            for (var name in this.readyState) {
+                if (this.readyState[name] !== !0) r = !1;
+            }
+
+            if (!r) return !1;
+
+            return this.ready();
+        }
+    }, {
+        key: 'load',
+        value: function load(name, callback) {
+            var _this9 = this;
+
+            if (!name || typeof this.readyState[name] == 'undefined') return !1;
+
+            var cb = function cb() {
+                if (callback) callback();
+                _this9.readyState[name] = !0;
+                _this9.readyCheck(name);
+            };
+
+            if (this.readyState[name] === !0) return cb();
+
+            this.readyState[name] = 'loading';
+
+            var type = this._.resources[name][0],
+                url = this._.resources[name][1];
+
+            if (type == 'css') $.getCSS(url, cb);else $.getScript(url, cb);
+        }
+    }]);
+
+    return LOD;
+}();
+
+LOD.defaults = {
+    resources: {},
+
+    ready: function ready() {}
+};
+
+LOD.ready = {};
 $document.ready(function () {
     console.log('[TRIGGER] $document - ready');
 
@@ -822,17 +915,6 @@ $document.ready(function () {
 
     $window.trigger('resized');
 
-    var flagMap = {
-        'uid': 'uid',
-        'item_type': 'itemType',
-        'item_id': 'itemId',
-        'item_is_followed': 'itemFollowed',
-        'circle_id': 'circleId',
-        'circle_is_followed': 'circleFollowed',
-        'tid': 'tid',
-        'pid': 'pid',
-        'thread_editable': 'threadEditable'
-    };
     $head.find('meta').each(function (index, el) {
         var name = el.getAttribute('name');
         if (flagMap[name]) window[flagMap[name]] = el.getAttribute('content');
@@ -872,17 +954,17 @@ $document.ready(function () {
 });
 
 var Layout = function Layout(functionInit) {
-    var _this9 = this;
+    var _this10 = this;
 
     _classCallCheck(this, Layout);
 
     Layout.items.push(this);
     functionInit = functionInit || function () {};
     this.init = function () {
-        if (_this9.inited) return _this9;
+        if (_this10.inited) return _this10;
 
-        functionInit(_this9);
-        _this9.inited = !0;
+        functionInit(_this10);
+        _this10.inited = !0;
     };
 };
 
@@ -932,9 +1014,17 @@ Component.initAll = function ($container) {
         'event': 'scrolled'
     });
 };
-new Component('form', 'form-init', function (el) {
+var componentForm = new Component('form', 'form-init', function (el) {
     var $el = $(el);
 
+    for (var i in componentForm.types) {
+        componentForm.types[i](el, $el);
+    }
+});
+
+componentForm.types = {};
+
+componentForm.types.autocompleteTag = function (el, $el) {
     $el.find('[prpr-autocomplete="tag"]').each(function (index, input) {
         input = $(input);
         var autocomplete = input.data('Autocomplete'),
@@ -993,7 +1083,13 @@ new Component('form', 'form-init', function (el) {
             updateTaglist();
         }
     });
-});
+};
+
+componentForm.types.uploader = function (el, $el) {
+    if ($el.hasClass('form--uploader')) {
+        new Uploader(el);
+    }
+};
 
 new Layout(function () {
 
@@ -1005,6 +1101,92 @@ new Layout(function () {
         }
     });
 });
+
+var Uploader = function () {
+    function Uploader(form) {
+        var _this11 = this;
+
+        _classCallCheck(this, Uploader);
+
+        var $el = void 0;
+        if (form instanceof jQuery) {
+            $el = el;
+            form = $el[0];
+        } else {
+            $el = $(form);
+        }
+
+        this.el = form;
+        this.$ = $el;
+
+        this.type = this.el.getAttribute('type');
+        if (!this.type) {
+            var QueryString = function () {
+                var query_string = {};
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+
+                    if (typeof query_string[pair[0]] === "undefined") {
+                        query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    } else if (typeof query_string[pair[0]] === "string") {
+                            var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                            query_string[pair[0]] = arr;
+                        } else {
+                                query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                            }
+                }
+                return query_string;
+            }();
+            this.type = QueryString.type || QueryString.uploader || 'circle_thread';
+        }
+
+        this.loader = $('<div class="form-loading"><span class="loader-circle"></span></div>').appendTo(this.$);
+
+        this.lod = new LOD({
+            name: 'uploader',
+            resources: {
+                'cssBasic': ['css', API.dropzone + Uploader.files['cssBasic']],
+                'cssFull': ['css', API.dropzone + Uploader.files['cssFull']],
+                'cssSite': ['css', API.common.css + '/lod-uploader.css'],
+                'js': ['js', API.dropzone + Uploader.files['js']],
+                'modules': ['js', API.dropzone + Uploader.files['modules']]
+            },
+            ready: function ready() {
+                _this11.ready();
+            }
+        });
+
+        this.lod.load('cssBasic', function () {
+            _this11.lod.load('cssFull');
+            _this11.lod.load('cssSite');
+            _this11.lod.load('js', function () {
+                _this11.lod.load('modules');
+            });
+        });
+    }
+
+    _createClass(Uploader, [{
+        key: 'ready',
+        value: function ready() {
+            $('<input type="file" name="file" />').appendTo(this.$.addClass('dropzone'));
+            this.loader.remove();
+            this.$.dropzone({
+                url: API.upload + '&type=' + this.type
+            });
+        }
+    }]);
+
+    return Uploader;
+}();
+
+Uploader.files = {
+    'cssBasic': '/basic.min.css',
+    'cssFull': '/dropzone.min.css',
+    'js': '/dropzone.min.js',
+    'modules': '/dropzone-amd-module.min.js'
+};
 
 
 new Layout(function () {
@@ -1417,17 +1599,20 @@ new Component('.gallery', 'gallery-init', function (el) {
 
     $items.each(function (i, dl) {
         var $dl = $(dl),
-            $img = $dl.find('img');
+            $img = $dl.find('img'),
+            $link = $dl.find('a');
         imgs.push({
             'id': $dl.attr('id') || null,
             'src': $img.attr('data-src') || $img.attr('src'),
+            'link': $link && $link.length ? $link.attr('href') : '',
+
             'width': parseInt($img.attr('data-width')),
             'height': parseInt($img.attr('data-height'))
         });
     });
 
     options.template = function (data) {
-        return '<div class="photo-container" style="height:' + data.displayHeight + 'px;margin-right:' + data.marginRight + 'px;">' + ('<a href="' + data.src + '" target="_blank">') + ('<img class="image-thumb" src="' + data.src + '" style="width:' + data.displayWidth + 'px;height:' + data.displayHeight + 'px;" >') + '</a>' + '</div>';
+        return '<div class="photo-container" style="height:' + data.displayHeight + 'px;margin-right:' + data.marginRight + 'px;">' + ('<a href="' + (data.link || data.src) + '" target="_blank"' + (data.modal ? ' modal="' + data.modal + '"' : '') + '>') + ('<img class="image-thumb lazy" src="' + data.src + '" data-src="' + data.src + '" style="width:' + data.displayWidth + 'px;height:' + data.displayHeight + 'px;" >') + '</a>' + '</div>';
     };
 
     new Gallery(imgs, $('<div class="gallery-row"/>').appendTo($el), options);
@@ -1436,7 +1621,7 @@ new Component('.gallery', 'gallery-init', function (el) {
 });
 
 var Gallery = function Gallery(data_imgs, $container, options) {
-    var _this10 = this;
+    var _this12 = this;
 
     _classCallCheck(this, Gallery);
 
@@ -1445,7 +1630,7 @@ var Gallery = function Gallery(data_imgs, $container, options) {
 
 
     $window.on('resized', function () {
-        $container.justifiedImages(_this10.settings);
+        $container.justifiedImages(_this12.settings);
     });
 
     return $container.justifiedImages(this.settings);
@@ -1739,7 +1924,7 @@ setInterval(function () {
 
 var Slider = function () {
     function Slider(el, settings) {
-        var _this11 = this;
+        var _this13 = this;
 
         _classCallCheck(this, Slider);
 
@@ -1764,29 +1949,29 @@ var Slider = function () {
         this.index = Slider.index;
 
         this.$slides.each(function (i, slide) {
-            _this11.slideInit(i, slide);
+            _this13.slideInit(i, slide);
         });
 
         this.$el.on('change.radioChange', 'input[type="radio"]', function (evt) {
-            _this11.radioChange(evt);
+            _this13.radioChange(evt);
         }).on('mousemove.radioChange', function () {
-            _this11.timeoutClear();
+            _this13.timeoutClear();
         }).hover(function () {
-            return _this11.timeoutNext = _this11.timeoutStart();
+            return _this13.timeoutNext = _this13.timeoutStart();
         });
 
         $('<button/>', {
             'type': 'button',
             'class': 'prev'
         }).on('click', function () {
-            _this11.goPrev();
+            _this13.goPrev();
         }).prependTo(this.$controls);
 
         $('<button/>', {
             'type': 'button',
             'class': 'next'
         }).on('click', function () {
-            _this11.goNext();
+            _this13.goNext();
         }).appendTo(this.$controls);
 
         Slider.index++;
@@ -1863,14 +2048,14 @@ var Slider = function () {
     }, {
         key: 'timeoutStart',
         value: function timeoutStart(time) {
-            var _this12 = this;
+            var _this14 = this;
 
             time = time || 5000;
             this.timeoutClear();
 
             this.$el.attr('pending', this.getOrderNext());
             return this.timeoutNext = setTimeout(function () {
-                _this12.goNext();
+                _this14.goNext();
             }, this._.interval);
         }
     }, {
@@ -1944,7 +2129,7 @@ var componentEditor = new Component('textarea[trumbowyg]', 'trumbowyg-init', fun
 
 var Editor = function () {
     function Editor(el, settings) {
-        var _this13 = this;
+        var _this15 = this;
 
         _classCallCheck(this, Editor);
 
@@ -1963,14 +2148,29 @@ var Editor = function () {
 
         this.loader = $('<div class="trumbowyg-loading"><span class="loader-circle"></span></div>').insertBefore($el);
 
+        this.resources = {
+            'css': ['css', API.trumbowyg['css']],
+            'js': ['js', API.trumbowyg['js']],
+            'lang': ['js', API.trumbowyg.langs + this.settings.lang + '.min.js'],
+            'uploader': ['js', API.trumbowyg.plugin.upload]
+        };
+
+        this.lod = new LOD({
+            name: 'editor',
+            resources: this.resources,
+            ready: function ready() {
+                _this15.ready();
+            }
+        });
+
         if ($.trumbowyg) {
             this.ready();
         } else {
-            this.getResource('js', function () {
-                _this13.getResource('lang');
-                _this13.getResource('uploader');
+            this.lod.load('js', function () {
+                _this15.lod.load('lang');
+                _this15.lod.load('uploader');
             });
-            this.getResource('css');
+            this.lod.load('css');
         }
     }
 
@@ -1981,49 +2181,9 @@ var Editor = function () {
             return this.init();
         }
     }, {
-        key: 'readyCheck',
-        value: function readyCheck() {
-            var r = !0;
-
-            for (var i in Editor.ready) {
-                if (Editor.ready[i] !== !0) r = !1;
-            }
-
-            if (!r) return !1;
-
-            return this.ready();
-        }
-    }, {
-        key: 'getResource',
-        value: function getResource(t, callback) {
-            var _this14 = this;
-
-            var cb = function cb() {
-                if (callback) callback();
-                Editor.ready[t] = !0;
-                _this14.readyCheck(t);
-            };
-
-            if (!t || typeof Editor.ready[t] == 'undefined') return !1;
-
-            if (Editor.ready[t] === !0) return cb();
-
-            Editor.ready[t] = 'loading';
-
-            var url = API.trumbowyg[t];
-            switch (t) {
-                case 'lang':
-                    url = API.trumbowyg.langs + this.settings.lang + '.min.js';break;
-                case 'uploader':
-                    url = API.trumbowyg.plugin.upload;break;
-            }
-
-            if (t == 'css') $.getCSS(url, cb);else $.getScript(url, cb);
-        }
-    }, {
         key: 'init',
         value: function init() {
-            var _this15 = this;
+            var _this16 = this;
 
             Editor.init();
             this.$.trumbowyg({
@@ -2060,9 +2220,9 @@ var Editor = function () {
 
             this.$ed = this.trumbowyg.$ed.on({
                 'input': function input() {
-                    clearTimeout(_this15.editorSyncTimeout);
-                    _this15.editorSyncTimeout = setTimeout(function () {
-                        _this15.trumbowyg.syncTextarea();
+                    clearTimeout(_this16.editorSyncTimeout);
+                    _this16.editorSyncTimeout = setTimeout(function () {
+                        _this16.trumbowyg.syncTextarea();
                     }, 100);
                 }
             });
@@ -2121,13 +2281,6 @@ var Editor = function () {
 
     return Editor;
 }();
-
-Editor.ready = {
-    'css': !1,
-    'js': !1,
-    'lang': !1,
-    'uploader': !1
-};
 
 Editor.defaults = {
     'lang': 'zh_cn'
