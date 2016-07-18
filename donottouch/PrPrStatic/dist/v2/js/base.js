@@ -1092,13 +1092,24 @@ componentForm.types.uploader = function (el, $el) {
 };
 
 new Layout(function () {
-
     $body.on('click.formCancel', 'form [button="cancel"]', function (evt) {
         var el = evt.currentTarget;
         if (!(el.tagName == 'A' && el.getAttribute('href') && el.getAttribute('href') != '#' && el.getAttribute('href').substr(0, 10) != 'javascript')) {
             history.back();
             evt.preventDefault();
         }
+    });
+
+    $body.on('input.checkHasValue change.checkHasValue', 'input, textarea', function (evt) {
+        var el = evt.currentTarget;
+        if (el.value) el.setAttribute('hasvalue', !0);else el.setAttribute('hasvalue', !1);
+    });
+
+    $body.on('focus', '.form-full .form-item', function (evt) {
+        var input = evt.target;
+        if (!input.disabled && !input.readOnly) evt.currentTarget.setAttribute('is-focus', !0);
+    }).on('blur', '.form-full .form-item', function (evt) {
+        evt.currentTarget.removeAttribute('is-focus');
     });
 });
 
@@ -1384,8 +1395,10 @@ new Layout(function (self) {
 
 new Layout(function () {
     $body.on('click.action', '.action', function (evt) {
+
+        evt.preventDefault();
+
         if (evt.currentTarget.getAttribute('disabled')) {
-            evt.preventDefault();
             return !1;
         }
 
@@ -1399,7 +1412,6 @@ new Layout(function () {
 
         if ($el.hasClass('action-plus')) {
             type = 'plus';
-            evt.preventDefault();
             if ($el.hasClass('action-plus-on')) {
                 type = 'plus-minus';
             }
@@ -1409,7 +1421,6 @@ new Layout(function () {
 
         if ($el.hasClass('action-confirm')) {
             type = 'confirm';
-            evt.preventDefault();
         }
 
         if (type == 'confirm') {
