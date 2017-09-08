@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>navigator</title>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/javascript">
+        if (!Array.isArray) {
+            Array.isArray = function (arg) {
+                return Object.prototype.toString.call(arg) === '[object Array]';
+            };
+        }
+
+        var keys = [
+            'appVersion',
+            'userAgent',
+
+            'language',
+            'languages',
+
+            'cookieEnabled',
+            'doNotTrack',
+            'maxTouchPoints',
+            'platform'
+        ];
+        var html = '<h1>navigator</h1>'
+
+        html += '<dl>'
+
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i]
+            var value = navigator[key]
+
+            if (Array.isArray(value)) {
+                value = '[' + value.join(', ') + ']'
+            }
+
+            html += '<dt>' + key + '</dt>'
+            html += '<dd>' + value + '</dd>'
+        }
+
+        html += '</dl>'
+
+        document.getElementById('container').innerHTML = html
+    </script>
+
+</body>
+
+</html>
