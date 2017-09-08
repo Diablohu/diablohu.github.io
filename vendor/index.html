@@ -54,6 +54,13 @@
         addList('Web Share', !!(navigator.share))
         html += '</dl>'
 
+        html += '<h2>Modern CSS Properties</h2>'
+        html += '<dl>'
+        var element = document.createElement('div')
+        addList('filter', typeof element.style.filter !== 'undefined')
+        addList('scroll-behavior', typeof element.style.scrollBehavior !== 'undefined')
+        html += '</dl>'
+
         document.getElementById('container').innerHTML = html
     </script>
 
