@@ -12,6 +12,33 @@
 
     <div id="container"></div>
 
+    <style>
+        .value-boolean {
+            position: relative;
+        }
+
+        .value-boolean:before {
+            display: inline-block;
+            width: 1em;
+        }
+
+        .value-boolean-true {
+            color: green;
+        }
+
+        .value-boolean-true:before {
+            content: '√'
+        }
+
+        .value-boolean-false {
+            color: red;
+        }
+
+        .value-boolean-false:before {
+            content: '×'
+        }
+    </style>
+
     <script type="text/javascript">
         if (!Array.isArray) {
             Array.isArray = function (arg) {
@@ -32,34 +59,65 @@
             'platform'
         ];
         var html = '<h1>navigator</h1>'
+        var sectionDefaultList = []
+        var element = document.createElement('div')
+
+        function addSection(title, list) {
+            if (!list && typeof title === 'object' && title.push)
+                return addSection(undefined, title)
+
+            var thisHtml = ''
+            if (title) thisHtml += '<h2>' + title + '</h2>'
+
+            thisHtml += '<dl>'
+            for (var i = 0; i < list.length; i++) {
+                thisHtml += list[i]
+            }
+            thisHtml += '</dl>'
+
+            return thisHtml
+        }
 
         function addList(title, value) {
-            if (Array.isArray(value)) {
-                value = '[' + value.join(', ') + ']'
-            }
-            html += '<dt>' + title + '</dt>'
-            html += '<dd>' + value + '</dd>'
-        }
+            var thisHtml = ''
 
-        html += '<dl>'
+            if (typeof value === 'boolean') {
+                thisHtml += '<dt class="value-boolean value-boolean-' + value + '">'
+                thisHtml += title
+                thisHtml += '</dt>'
+            } else {
+                if (Array.isArray(value)) {
+                    value = '[' + value.join(', ') + ']'
+                }
+                thisHtml += '<dt>' + title + '</dt>'
+                thisHtml += '<dd>' + value + '</dd>'
+            }
+
+            return thisHtml
+        }
 
         for (var i = 0; i < keys.length; i++) {
-            addList(keys[i], navigator[keys[i]])
+            sectionDefaultList.push(addList(keys[i], navigator[keys[i]]))
         }
+        html += addSection(sectionDefaultList)
 
-        html += '</dl>'
+        html += addSection(
+            'Modern APIs',
+            [
+                addList('Intersection Observer', !!('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype)),
+                addList('Web Share', !!(navigator.share))
+            ]
+        )
 
-        html += '<h2>Modern APIs</h2>'
-        html += '<dl>'
-        addList('Web Share', !!(navigator.share))
-        html += '</dl>'
-
-        html += '<h2>Modern CSS Properties</h2>'
-        html += '<dl>'
-        var element = document.createElement('div')
-        addList('filter', typeof element.style.filter !== 'undefined')
-        addList('scroll-behavior', typeof element.style.scrollBehavior !== 'undefined')
-        html += '</dl>'
+        html += addSection(
+            'Modern CSS Properties (Native Supports)',
+            [
+                addList('flexbox-layout', typeof element.style.flex !== 'undefined'),
+                addList('grid-layout', typeof element.style.grid !== 'undefined'),
+                addList('filter', typeof element.style.filter !== 'undefined'),
+                addList('scroll-behavior', typeof element.style.scrollBehavior !== 'undefined')
+            ]
+        )
 
         document.getElementById('container').innerHTML = html
     </script>
