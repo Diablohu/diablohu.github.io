@@ -114,7 +114,8 @@
             'Modern APIs',
             [
                 addList('Intersection Observer', !!('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype)),
-                addList('Web Share', !!(navigator.share))
+                addList('Web Share', !!(navigator.share)),
+                addList('Internationalization (Intl)', !!('Intl' in window))
             ]
         )
 
