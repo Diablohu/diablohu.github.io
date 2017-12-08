@@ -102,6 +102,15 @@
         html += addSection(sectionDefaultList)
 
         html += addSection(
+            'Sizes',
+            [
+                addList('Device size', `${window.screen.width} x ${window.screen.height}`),
+                addList('Available size', `${window.screen.availWidth} x ${window.screen.availHeight}`),
+                addList('Viewport size (w/ scrollbar)', `${document.documentElement.clientWidth} x ${document.documentElement.clientHeight}`),
+            ]
+        )
+
+        html += addSection(
             'Modern APIs',
             [
                 addList('Intersection Observer', !!('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype)),
