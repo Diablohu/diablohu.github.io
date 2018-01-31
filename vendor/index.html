@@ -118,6 +118,7 @@
                 addList('Internationalization (Intl)', !!('Intl' in window)),
                 addList('Geolocation', !!(navigator.geolocation)),
                 addList('Service Worker', !!('serviceWorker' in navigator)),
+                addList('High Resolution Time API [performance.now()]', !!('performance' in window)),
             ]
         )
 
