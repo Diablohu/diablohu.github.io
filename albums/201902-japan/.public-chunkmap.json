@@ -1,0 +1,44 @@
+{
+    ".entrypoints": {
+        "commons": [
+            "includes/entry.5648acd0c7a5e9ec76b2.js"
+        ],
+        "critical": [
+            "includes/extract.3.a51af4dea5659853adc4.css",
+            "includes/entry.a51af4dea5659853adc4.js"
+        ],
+        "client": [
+            "includes/entry.8a84eae5ae2e72a91521.js"
+        ],
+        "__KOOT__CLIENT__RUN__FIRST__": [
+            "includes/entry.02e80551b933e10f556e.js"
+        ]
+    },
+    ".files": {
+        "__KOOT__CLIENT__RUN__FIRST__.js": "includes/entry.02e80551b933e10f556e.js",
+        "client.js": "includes/entry.8a84eae5ae2e72a91521.js",
+        "commons.js": "includes/entry.5648acd0c7a5e9ec76b2.js",
+        "critical.css": "includes/extract.3.a51af4dea5659853adc4.css",
+        "critical.js": "includes/entry.a51af4dea5659853adc4.js",
+        "__KOOT__EXTRACT__CSS__.css": "includes/extract.all.1abdd580cc1c86ef5c00a1434549f0f8.css"
+    },
+    "__KOOT__CLIENT__RUN__FIRST__": [
+        "includes/entry.02e80551b933e10f556e.js"
+    ],
+    "client": [
+        "includes/entry.8a84eae5ae2e72a91521.js"
+    ],
+    "commons": [
+        "includes/entry.5648acd0c7a5e9ec76b2.js"
+    ],
+    "critical": [
+        "includes/extract.3.a51af4dea5659853adc4.css",
+        "includes/entry.a51af4dea5659853adc4.js"
+    ],
+    "__KOOT__EXTRACT__CSS__": [
+        "includes/extract.all.1abdd580cc1c86ef5c00a1434549f0f8.css"
+    ],
+    "service-worker": [
+        "public/service-worker.js"
+    ]
+}
