@@ -1,39 +1,39 @@
 {
     ".entrypoints": {
         "commons": [
-            "includes/entry.5648acd0c7a5e9ec76b2.js"
+            "includes/entry.1c341aa1209aa74c77bf.js"
         ],
         "critical": [
-            "includes/extract.3.a51af4dea5659853adc4.css",
-            "includes/entry.a51af4dea5659853adc4.js"
+            "includes/extract.3.66fd05e33d81c76ddbb4.css",
+            "includes/entry.66fd05e33d81c76ddbb4.js"
         ],
         "client": [
-            "includes/entry.8a84eae5ae2e72a91521.js"
+            "includes/entry.5836fa6d6be630c644f9.js"
         ],
         "__KOOT__CLIENT__RUN__FIRST__": [
-            "includes/entry.02e80551b933e10f556e.js"
+            "includes/entry.7450fd8c152fb49f0bd8.js"
         ]
     },
     ".files": {
-        "__KOOT__CLIENT__RUN__FIRST__.js": "includes/entry.02e80551b933e10f556e.js",
-        "client.js": "includes/entry.8a84eae5ae2e72a91521.js",
-        "commons.js": "includes/entry.5648acd0c7a5e9ec76b2.js",
-        "critical.css": "includes/extract.3.a51af4dea5659853adc4.css",
-        "critical.js": "includes/entry.a51af4dea5659853adc4.js",
+        "__KOOT__CLIENT__RUN__FIRST__.js": "includes/entry.7450fd8c152fb49f0bd8.js",
+        "client.js": "includes/entry.5836fa6d6be630c644f9.js",
+        "commons.js": "includes/entry.1c341aa1209aa74c77bf.js",
+        "critical.css": "includes/extract.3.66fd05e33d81c76ddbb4.css",
+        "critical.js": "includes/entry.66fd05e33d81c76ddbb4.js",
         "__KOOT__EXTRACT__CSS__.css": "includes/extract.all.1abdd580cc1c86ef5c00a1434549f0f8.css"
     },
     "__KOOT__CLIENT__RUN__FIRST__": [
-        "includes/entry.02e80551b933e10f556e.js"
+        "includes/entry.7450fd8c152fb49f0bd8.js"
     ],
     "client": [
-        "includes/entry.8a84eae5ae2e72a91521.js"
+        "includes/entry.5836fa6d6be630c644f9.js"
     ],
     "commons": [
-        "includes/entry.5648acd0c7a5e9ec76b2.js"
+        "includes/entry.1c341aa1209aa74c77bf.js"
     ],
     "critical": [
-        "includes/extract.3.a51af4dea5659853adc4.css",
-        "includes/entry.a51af4dea5659853adc4.js"
+        "includes/extract.3.66fd05e33d81c76ddbb4.css",
+        "includes/entry.66fd05e33d81c76ddbb4.js"
     ],
     "__KOOT__EXTRACT__CSS__": [
         "includes/extract.all.1abdd580cc1c86ef5c00a1434549f0f8.css"
